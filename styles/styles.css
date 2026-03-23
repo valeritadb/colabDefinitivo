@@ -1,0 +1,83 @@
+/* == VARIABLES GLOBALES == */
+:root{
+
+    /* Paleta de colores */
+    --c-naranja: #E57F12;
+    --c-azul: #9CCDCE;
+    --c-negro: #000000;
+    --c-blanco: whitesmoke;
+
+    /* Tipografía */
+    --font-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display:'FutureBK', sans-serif;
+    --font-aux: 'FutureBookIT', sans-serif;
+
+    /* Espaciado */
+    --section-pad-v: clamp(4rem, 8vw, 9rem); /*Vertical*/
+    --section-pad-h: clamp(1.5rem, 4vw, 6vw); /*Horizontal*/
+
+    /* Columnas y gaps */
+    --section-gap: clamp(2rem, 5vw, 5rem);  /* Espacio entre columnas */
+    --col-break: 28rem;                     /* Breakpoint flex: apila <28rem */
+
+    /* Animaciones */
+    --trans-primaria: 0.40s, ease;
+    --trans-secundaria: 0.2s ease;
+}
+
+/* == FUENTES IMPORTADAS ==*/
+@font-face {
+    font-family: 'FutureBK';
+    src: url('/fonts/Futurebk.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FutureBookIT';
+    src: url(/fonts/Futura\ Book\ Italic\ font.ttf);
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* == Scroll bar naranja == */
+::-webkit-scrollbar{
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--c-blanco);
+    border-radius: 5%;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--c-naranja);
+    border-radius: 5%;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #a8550b;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-naranja) #f1f1f1;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    scroll-behavior: smooth; 
+    font-size: 1rem;
+    padding-top: 2rem;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--c-blanco);
+}
+
