@@ -21,8 +21,8 @@
     --col-break: 28rem;                     /* Breakpoint flex: apila <28rem */
 
     /* Animaciones */
-    --trans-primaria: 0.40s, ease;
-    --trans-secundaria: 0.2s ease;
+    --trans-primaria: 0.4s ease;
+    --trans-secundaria: 0.1s ease;
 }
 
 /* == FUENTES IMPORTADAS ==*/
@@ -72,12 +72,13 @@
     padding: 0;
 }
 
+/* == Estilos básicos del body == */
 html, body {
     scroll-behavior: smooth; 
     font-size: 1rem;
-    padding-top: 2rem;
     width: 100%;
     overflow-x: hidden;
-    background-color: var(--c-blanco);
 }
+
+
 

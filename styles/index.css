@@ -1,0 +1,311 @@
+/* =====================================================
+   HERO SECTION - SVG full viewport
+   ===================================================== */
+/* Hero: altura completa viewport, fondo sutil */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Contenedor SVG: centrado responsive */
+.hero-stage {
+  width: 100%;
+  height: clamp(70vh, 90vw, 100vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  max-height: 710px;
+}
+
+/* Texto SVG: stroke invisible para efecto hover */
+.hero-svg-text {
+  font-weight: 400;
+  paint-order: stroke fill;
+  stroke: transparent;
+  cursor: default;
+}
+
+/* Hover texto COLAB: fill naranja */
+#hero-text:hover {
+  fill: var(--c-naranja) !important;
+}
+
+#hero-text {
+  transition: fill var(--trans-primaria);
+  cursor: pointer;
+}
+
+/* =====================================================
+   SECCIONES INTRO - ESPACIO Y SERVICIOS
+   ===================================================== */
+/* Padding responsive heredado de variables CSS */
+.seccion-intro {
+  padding: var(--section-pad-v) var(--section-pad-h);
+}
+
+
+
+/* =====================================================
+   ESPACIO: Layout específico con imagen
+   ===================================================== */
+/* Fila centrada y limitada */
+#espacio .row {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/* Columna texto: crece + padding protector vs imagen */
+#espacio .col-lg-6:first-child {
+  flex-grow: 1;
+  padding-right: clamp(2rem, 5vw, 4rem);
+}
+
+/* Imagen: escala grande, hover scale */
+#espacio .imagen-seccion {
+  max-height: clamp(20rem, 25rem, 30rem);
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--trans);
+}
+
+#espacio .imagen-seccion:hover { transform: scale(1.02); }
+
+/* Alineación derecha imagen */
+.contenedor-imagen {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* =====================================================
+   SERVICIOS: Layout flex columnas (título izq, texto der)
+   ===================================================== */
+/* Contenedor flex principal: responsive auto-apilado */
+.section-inner {
+  max-width: 65rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--section-gap);
+  align-items: stretch; /* Mismas alturas desktop */
+  justify-content: center;
+}
+
+/* Ajuste de ancho: igual que la sección de espacio (70% del contenedor) */
+.section-servicios .section-inner {
+  max-width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--section-gap);
+  align-items: stretch;
+}
+
+/* Columna texto: flexible, centrado vertical */
+.col-texto {
+  flex: 1 1 var(--col-break);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Columna título: flexible, alineado izquierda */
+.col-titulo-grande {
+  flex: 1 1 var(--col-break);
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Empuja el título ligeramente hacia la derecha para acercarlo al contenido de texto */
+  padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+/* Servicios: stretch height columnas */
+.section-servicios .section-inner { align-items: stretch; }
+
+/* =====================================================
+   SLIDER PROXIMAMENTE - Diapositiva 9 optimizada
+   ===================================================== */
+.section-proximamente .section-inner {
+  align-items: stretch; /* Alturas iguales desktop */
+}
+
+/* Columna media: slider + espacio flechas */
+.proximamente-media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 clamp(2rem, 4vw, 3.5rem);
+  flex: 1 1 var(--col-break);
+  min-width: 0;
+}
+
+/* Slider: escala responsive 320x380 proporción fija */
+.proximamente-slider {
+  position: relative;
+  width: 100%;
+  max-width: clamp(16rem, 38vw, 22rem);
+  aspect-ratio: 320 / 380;
+}
+
+/* Marcos naranjas: offsets escalan con viewport */
+.slider-frame {
+  position: absolute;
+  inset: 0;
+  border: 0.1875rem solid var(--c-naranja);
+  background: transparent;
+  z-index: 1;
+}
+
+.slider-frame--1 {
+  transform: translate(clamp(0.4rem, 1vw, 0.75rem), clamp(0.4rem, 1vw, 0.75rem));
+}
+
+.slider-frame--2 {
+  transform: translate(clamp(0.8rem, 2vw, 1.5rem), clamp(0.8rem, 2vw, 1.5rem));
+}
+
+/* Track: overflow hidden + fondo blanco */
+.proximamente-track {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  background: var(--c-blanco);
+}
+
+/* Slides: animación slide-in desde derecha */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(1.5rem);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.slide--active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Flechas: posición sticky top/bottom */
+.proximamente-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  line-height: 1;
+  z-index: 10;
+  padding: 0.25rem;
+  color: var(--c-negro);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--trans-fast);
+}
+
+.proximamente-arrow:hover {
+  color: var(--c-naranja);
+}
+
+/*.proximamente-arrow-left { left: clamp(-1rem, -2vw, -1.5rem); }
+.proximamente-arrow-right { right: clamp(-2.5rem, -3.5vw, -4rem); }*/
+
+/* Flechas SVG: tamaño fijo + centrado */
+.proximamente-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(2.5rem, 5vw, 3.5rem);     /* ANCHO FIJO botón */
+    height: clamp(2.5rem, 5vw, 3.5rem);    /* ALTO FIJO botón */
+    padding: 0.25rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all var(--trans-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proximamente-arrow img {
+    width: clamp(1.2rem, 2.5vw, 1.8rem);   /* SVG pequeño */
+    height: clamp(1.2rem, 2.5vw, 1.8rem);
+    object-fit: contain;                   /* Mantiene proporción */
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+/*Posiciones laterales */
+.proximamente-arrow-left { left: clamp(-4rem, -5vw, -6rem); }
+.proximamente-arrow-right { right: clamp(-5rem, -6vw, -7rem); }
+
+
+/* Columna texto: izquierda, centrado vertical */
+.proximamente-content {
+  flex: 1 1 var(--col-break);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: clamp(1rem, 3vw, 2rem);
+  cursor: default;
+}
+
+.proximamente-content h2 {
+  text-transform: lowercase;
+  color: var(--c-naranja);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 clamp(0.75rem, 2vw, 1.25rem) 0;
+}
+
+.proximamente-content p {
+  max-width: 26rem;
+  margin: 0 0 clamp(0.75rem, 2vw, 1.25rem) 0;
+  line-height: 1.65;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+}
+
+.proximamente-down-arrow {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: clamp(0.75rem, 2vw, 1.25rem) 0;
+  line-height: 1;
+  color: var(--c-naranja);
+}
+
+.proximamente-lista {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  list-style: none;
+  padding: 0;
+}
+
+.proximamente-lista li {
+  margin-bottom: 0.5rem;
+}
+
+.proximamente-lista a {
+  color: var(--c-negro);
+  text-decoration: underline;
+  transition: color var(--trans-fast);
+}
+
+.proximamente-lista a:hover {
+  color: var(--c-naranja);
+}
+
+

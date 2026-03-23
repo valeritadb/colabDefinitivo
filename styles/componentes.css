@@ -1,0 +1,47 @@
+/* =====================================================
+   LINKS "VER MÁS" - Consistentes navbar/secciones
+   ===================================================== */
+/* Contenedor inline-flex con icono + texto */
+.link-ver-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: clamp(0.75rem, 2vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--c-naranja);
+  transition: color var(--trans-fast);
+}
+
+.link-ver-mas:hover { text-decoration: underline; }
+
+.link-ver-mas-texto { color: inherit; }
+.link-ver-mas-icono img { transition: opacity var(--trans-fast); }
+
+/* =====================================================
+   TIPOGRAFÍA COMPARTIDA - Títulos y textos
+   ===================================================== */
+/* Títulos: naranja uppercase subrayado, escala responsive */
+.titulo-seccion {
+  color: var(--c-naranja);
+  font-size: clamp(1.5rem, 3rem, 3.5rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-thickness: 0.15rem;
+  text-underline-offset: 0.4rem;
+  margin: 0 0 clamp(1rem, 2.5vw, 1.75rem);
+  line-height: 1;
+  cursor: default;
+  transition: color var(--trans);
+}
+
+
+/* Párrafos en columnas flex */
+.col-texto p {
+  margin: 0 0 clamp(0.6rem, 1.5vw, 1rem);
+  line-height: 1.65;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  color: var(--c-negro);
+}
