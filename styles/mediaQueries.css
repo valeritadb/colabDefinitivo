@@ -1,8 +1,13 @@
 /* =====================================================
-   MEDIA QUERIES UNIFICADAS - 2 breakpoints solamente
+   MEDIA QUERIES UNIFICADAS
    ===================================================== */
 /* BREAKPOINT 1: TABLET/MÓVIL (≤991px) */
 @media (max-width: 991px) {
+
+  main{
+      padding: 1.5rem;
+    }
+
   /* Navbar: colapsa vertical + fondo negro */
   .navbar-collapse {
     position: absolute;
@@ -120,11 +125,44 @@
         width: 100%;
     }
 
+    /*CONTACTO*/
+    .cnt-titulo { 
+        white-space: normal; 
+    }
 
+    main{
+        padding: 2rem;
+    }
+}
+/* BREAKPOINT 2: Tablet (≤768px) */
+@media (max-width: 768px) {
+
+    main{
+        padding: 2rem;
+    }
+
+    /*Contacto*/
+    .cnt-mapa-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .cnt-mapa {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
-/* BREAKPOINT 2: MÓVIL PEQUEÑO (≤576px) */
+
+/* BREAKPOINT 3: MÓVIL PEQUEÑO (≤576px) */
 @media (max-width: 576px) {
+
+  main{
+      padding: 1.5rem;
+    }
+
+
   .seccion-intro {
     padding: clamp(3rem, 10vw, 5rem) var(--section-pad-h);
   }
@@ -147,11 +185,12 @@
     .footer-contact p {
         text-align: left;
     }
-
-    main{
-      padding: 2rem;
-    }
     .imagen-seccion{
       display: none;
+    }
+
+    /*CONTACTO*/
+    .cnt-titulo {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
     }
 }

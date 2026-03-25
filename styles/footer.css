@@ -95,3 +95,6 @@
     color: var(--c-blanco);
     margin-left: auto;
 }
+footer a:hover{
+    color: var(--c-negro);
+}

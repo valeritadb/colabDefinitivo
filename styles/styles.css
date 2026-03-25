@@ -78,6 +78,7 @@ html, body {
     font-size: 1rem;
     width: 100%;
     overflow-x: hidden;
+    background: var(--c-blanco);
 }
 
 main{
