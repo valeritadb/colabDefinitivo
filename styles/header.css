@@ -41,5 +41,45 @@
     display: inline-block;
 }
 
+/* Logo con ruta al index */
 
+/* Logo CO / LAB — apilado dos líneas */
+.esp-logo {
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--c-negro);
+    padding: clamp(0.3rem, 0.6vw, 0.4rem) clamp(0.35rem, 0.8vw, 0.45rem);
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    z-index: 2000;
+}
 
+.esp-logo-co,
+.esp-logo-lab {
+    display: block;
+    font-family: var(--font-display, 'Futurebk', sans-serif);
+    font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.esp-logo-co {
+    margin-bottom: -0.04em;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(0.8rem, 1.6vw, 1.2rem) clamp(1.5rem, 4vw, 5vw);
+    transition: all 0.4s ease;
+}

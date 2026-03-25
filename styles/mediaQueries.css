@@ -71,6 +71,9 @@
     padding-left: clamp(1rem, 4vw, 2rem);
     padding-right: clamp(1rem, 4vw, 2rem);
   }
+  .imagen-seccion{
+      display: none;
+    }
 
   .hero-stage,
   .hero-svg {
@@ -143,5 +146,12 @@
 
     .footer-contact p {
         text-align: left;
+    }
+
+    main{
+      padding: 2rem;
+    }
+    .imagen-seccion{
+      display: none;
     }
 }

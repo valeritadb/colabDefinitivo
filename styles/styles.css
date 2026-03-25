@@ -80,5 +80,9 @@ html, body {
     overflow-x: hidden;
 }
 
+main{
+    padding: 2rem;
+   }
+
 
 

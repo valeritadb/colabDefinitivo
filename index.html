@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/styles/main.css"> <!--Estilos de Bootstrap-->
     
     <link rel="stylesheet" href="/styles/index.css"> <!--Estilos de Index-->
-    <link rel="stylesheet" href="/styles/layouts.css"> <!--Estilos de la distribución-->
     <link rel="stylesheet" href="/styles/componentes.css"> <!--Estilos de los componentes-->
     <link rel="stylesheet" href="/styles/header.css"> <!--Estilos del header-->
     <link rel="stylesheet" href="/styles/footer.css"> <!--Estillos del footer-->
@@ -34,32 +33,38 @@
                 <!--Enlaces en vertical-->
                 <div class="navbar-nav flex-column align-items-end ms-auto">
                 <!--Espacio-->
-                    <a class="nav-link  link-colab" href="espacio.html">
+                    <a href="/pages/espacio.html" class="nav-link  link-colab">
                     espacio
                     <span class="icono-links position-relative d-inline-block ms-1">
-                    <img class="icono-links-hover position-absolute top-0 start-0" src="multimedia/recursos_svg/azul_def_asterisco.svg" alt="" width="20" height="20">
+                    <img class="icono-links-hover position-absolute top-0 start-0" src="/multimedia/recursos_svg/azul_def_asterisco.svg" alt="" width="20" height="20">
                     <img class="icono-links-normal" src="/multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20">
                     </span>
                 </a>
-                    <!--Servicios-->
-                    <a href="pages/servicios.html" class="nav-link link-colab">
+                <!--Servicios-->
+                    <a href="/pages/servicios.html" class="nav-link link-colab">
                         servicios
                         <span class="icono-links position-relative d-inline-block ms-1">
-                            <img src="multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
-                            <img src="multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                            <img src="/multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="/multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
                         </span>
                     </a>
-                    <!--Contacto-->
-                    <a href="pages/contacto.html" class="nav-link link-colab">
+                <!--Contacto-->
+                    <a href="/pages/contacto.html" class="nav-link link-colab">
                         contacto
                         <span class="icono-links position-relative d-inline-block ms-1">
-                            <img src="multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
-                            <img src="multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                            <img src="/multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="/multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
                         </span>
                     </a>
                 </div>
             </div>
         </nav>
+        
+        
+    </header>
+
+    <!--PÁGINA PRINCIPAL Y CONTENIDO DE LA SECCIÓN (INDEX)-->
+    <main>
         <!--Hero principal con ilustraciones y logo-->
         <div class="hero-stage">
             <svg class="hero-svg" viewBox="0 0 1400 710" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COLAB — Coworking Cerámico">
@@ -81,12 +86,6 @@
                 </text>
             </svg>
         </div>
-        
-    </header>
-
-    <!--PÁGINA PRINCIPAL Y CONTENIDO DE LA SECCIÓN (INDEX)-->
-    <main>
-
        <!-- Sección Espacio -->
         <section id="espacio" class="seccion-intro">
             <div class="container">
@@ -94,11 +93,11 @@
                 <div class="col-lg-6">
                     <h2 class="titulo-seccion">ESPACIO</h2>
                     <p class="texto-intro">Con el fin de crear comunidad y expandir los conocimientos de la cerámica nace COLAB. Un lugar donde dar rienda suelta a la creatividad a través de la experimentación con materiales cerámicos. Las instalaciones cuentan con toda la equipación necesaria para desarrollar las actividades, así como áreas específicas destinadas a diferentes procesos.</p>
-                    <a href="espacio.html" class="link-ver-mas"><img class="icono-links-normal" src="/multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20"> ver más</a>
+                    <a href="/pages/espacio.html" class="link-ver-mas"><img class="icono-links-normal" src="/multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20"> ver más</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="contenedor-imagen">
-                    <img src="multimedia/ilustraciones_svg/ILUS ESPACIO.svg" alt="Ilustración del espacio COLAB" class="imagen-seccion">
+                    <img src="/multimedia/ilustraciones_svg/ILUS ESPACIO.svg" alt="Ilustración del espacio COLAB" class="imagen-seccion">
                     </div>
                 </div>
                 </div>
@@ -118,7 +117,7 @@
                 <div class="col-texto">
                     <p>Aquí podrás alquilar módulos individuales de taller, salas para dar tus propias clases, tornos individuales o la sala completa para dar clases de torno. También cuentas con los servicios de cocciones y recogida de pedidos de Prodesco.</p>
                     <p>Además, se realizarán cursos especializados dirigidos a profesionales del sector de la cerámica y eventos culturales.</p>
-                    <a href="servicios.html" class="link-ver-mas">
+                    <a href="/pages/servicios.html" class="link-ver-mas">
                     <span class="link-ver-mas-icono" aria-hidden="true">
                         <img class="icono-links-normal" src="/multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20">
                     </span>
@@ -142,19 +141,19 @@
                     <!-- Track slides -->
                     <div class="proximamente-track" role="region" aria-label="Galería imágenes">
                     <div class="slide slide--active">
-                        <img src="multimedia/DSC02735.JPG" alt="Espacio COLAB — foto 1">
+                        <img src="#" alt="Evento 1 - COLAB">
                     </div>
                     <div class="slide">
-                        <img src="multimedia/DSC02740.JPG" alt="Espacio COLAB — foto 2">
+                        <img src="#" alt="Evento 2 - COLAB">
                     </div>
                     <div class="slide">
-                        <img src="multimedia/DSC02772.JPG" alt="Espacio COLAB — foto 3">
+                        <img src="#" alt="Evento 3 - COLAB">
                     </div>
                     </div>
                     
                     <!-- Flechas navegación -->
-                    <button class="proximamente-arrow proximamente-arrow-left" id="prevSlide" aria-label="Anterior"><img src="multimedia/recursos_svg/flecha_larga_izq.svg" alt=""></button>
-                    <button class="proximamente-arrow proximamente-arrow-right" id="nextSlide" aria-label="Siguiente"><img src="multimedia/recursos_svg/flecha_larga.svg" alt="">
+                    <button class="proximamente-arrow proximamente-arrow-left" id="prevSlide" aria-label="Anterior"><img src="/multimedia/recursos_svg/flecha_larga_izq.svg" alt=""></button>
+                    <button class="proximamente-arrow proximamente-arrow-right" id="nextSlide" aria-label="Siguiente"><img src="/multimedia/recursos_svg/flecha_larga.svg" alt="">
                     </button>
                 </div>
                 </div>
@@ -179,9 +178,9 @@
         <div class="footer-top-inner">
             <!--Nav-->
              <nav class="footer-nav" aria-label="Navegación footer">
-                <a href="pages/espacio.html">espacio</a>
-                <a href="pages/servicios.html">servicios</a>
-                <a href="pages/contacto.html">contacto</a>
+                <a href="/pages/espacio.html">espacio</a>
+                <a href="/pages/servicios.html">servicios</a>
+                <a href="/pages/contacto.html">contacto</a>
             </nav>
 
             <!-- * Contacto: dirección + instagram con icono -->
@@ -211,8 +210,8 @@
     </footer>
 
 
-    <script src="scripts/general.js" defer></script> <!--Funcionalidades generales (JS)-->
-    <script defer src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> <!--Funcionalidades de Bootstrap (JS)-->
-    <script src="scripts/slider.js" defer></script>
+    <script src="/scripts/general.js" defer></script> <!--Funcionalidades generales (JS)-->
+    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script> <!--Funcionalidades de Bootstrap (JS)-->
+    <script src="/scripts/slider.js" defer></script>
 </body>
 </html>
