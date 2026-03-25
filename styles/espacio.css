@@ -1,0 +1,490 @@
+/* *********************************************************
+   ESPACIO.CSS — Estilos específicos página espacio
+   ********************************************************* */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.esp-hero {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: clamp(4rem, 7vw, 6.5rem);
+    padding-bottom: clamp(4rem, 7vw, 6.5rem);
+    box-sizing: border-box;
+}
+
+.esp-hero .esp-contenedor {
+    width: 100%;
+}
+
+.esp-hero-inner {
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
+.esp-titulo {
+    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--c-naranja);
+    text-decoration: underline;
+    text-decoration-thickness: 0.07em;
+    text-underline-offset: 0.12em;
+    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.esp-hero-fila {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0 clamp(0.5rem, 2vw, 2.5rem);
+}
+
+.esp-hero-texto {
+    flex: 0 0 30%;
+    min-width: 0;
+    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+    line-height: 1.75;
+}
+
+.esp-hero-ilus {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.esp-hero-ilus img {
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+.esp-intro {
+    padding-top: clamp(0.5rem, 2vw, 1.5rem);
+    padding-bottom: clamp(2rem, 4.5vw, 5rem);
+}
+
+.esp-intro-texto {
+    margin: 0 auto;
+    max-width: 52rem;
+    font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+    line-height: 1.72;
+}
+
+
+/* =========================================================
+   GALERÍA MASONRY
+   ========================================================= */
+.esp-galeria {
+    overflow: hidden;
+    margin-bottom: clamp(3.5rem, 7vw, 8rem);
+}
+
+.gal-grid {
+    columns: 5;
+    column-gap: 8px;
+    padding: 0 8px;
+}
+
+.gal-item {
+    break-inside: avoid;
+    overflow: hidden;
+    line-height: 0;
+    margin-bottom: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Alturas variables para efecto masonry */
+.gal-item:nth-child(5n+1) img { height: clamp(11rem, 17vw, 16rem); }
+.gal-item:nth-child(5n+2) img { height: clamp(15rem, 23vw, 21rem); }
+.gal-item:nth-child(5n+3) img { height: clamp(9rem,  13vw, 12rem); }
+.gal-item:nth-child(5n+4) img { height: clamp(17rem, 26vw, 24rem); }
+.gal-item:nth-child(5n)   img { height: clamp(12rem, 18vw, 17rem); }
+
+.gal-item img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* Overlay azul en hover */
+.gal-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--c-azul);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gal-item:hover::after { opacity: 0.42; }
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+.gal-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.84);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: lb-fadein 0.22s ease forwards;
+}
+
+@keyframes lb-fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.gal-lightbox-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: min(88vw, 68rem);
+    width: 100%;
+}
+
+.gal-lightbox img {
+    max-width: 100%;
+    max-height: 84vh;
+    object-fit: contain;
+    display: block;
+    border-radius: 2px;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.gal-lightbox img.lb-exit-left  { opacity: 0; transform: translateX(-36px); }
+.gal-lightbox img.lb-exit-right { opacity: 0; transform: translateX(36px);  }
+.gal-lightbox img.lb-enter      { opacity: 0; }
+
+.gal-lb-close {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.2s;
+    z-index: 10000;
+}
+
+.gal-lb-close:hover { color: var(--c-azul); }
+
+.gal-lb-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    z-index: 2;
+    transition: color 0.2s;
+    user-select: none;
+}
+
+.gal-lb-arrow:hover { color: var(--c-azul); }
+.gal-lb-prev { left: -3.5rem; }
+.gal-lb-next { right: -3.5rem; }
+
+.gal-lb-counter {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.55);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    z-index: 10000;
+}
+
+
+/* =========================================================
+   SECCIONES DE SALA
+   ========================================================= */
+.esp-sala {
+    padding: clamp(2.5rem, 5vw, 7rem) 0;
+}
+
+.esp-sala-grid {
+    display: grid;
+    grid-template-columns: 42fr 58fr;
+    align-items: start;
+    gap: 0;
+}
+
+.esp-sala-foto img {
+    width: 100%;
+    height: clamp(16rem, 28vw, 26rem);
+    object-fit: cover;
+    display: block;
+}
+
+.esp-sala-derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: clamp(1rem, 2.5vw, 3rem);
+}
+
+/* Título solapado sobre la foto */
+.esp-subtitulo {
+    font-size: clamp(1.6rem, 3.2vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--c-naranja);
+    background: var(--c-blanco);
+    margin-left: clamp(-6rem, -10vw, -12rem);
+    padding: 0.12em 0.6em 0.12em 0;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.esp-sala-derecha p {
+    font-size: clamp(0.85rem, 1.05vw, 1rem);
+    line-height: 1.7;
+    max-width: 22rem;
+    margin-top: clamp(1.5rem, 4.5vw, 6rem);
+    color: var(--c-negro);
+}
+
+
+/* ── SALA DE TORNOS ── */
+#sala-tornos .esp-subtitulo {
+    white-space: nowrap;
+    font-size: clamp(1rem, 2.8vw, 3.2rem);
+}
+
+
+/* ── ESPACIOS INDIVIDUALES ── */
+.esp-sala--derecha .esp-sala-grid {
+    grid-template-columns: 45fr 55fr;
+}
+
+.esp-sala--derecha .esp-sala-derecha {
+    order: -1;
+    padding-left: 0;
+    padding-right: clamp(1rem, 2.5vw, 3rem);
+}
+
+.esp-sala--derecha .esp-subtitulo {
+    margin-left: 0;
+    padding-left: 0;
+    background: transparent;
+    white-space: normal;
+}
+
+.esp-sala--derecha .esp-sala-derecha p {
+    margin-top: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.esp-sala-foto--borde { overflow: hidden; }
+
+.esp-sala-foto--borde img {
+    width: calc(100% + clamp(2rem, 5vw, 7vw));
+    height: clamp(16rem, 28vw, 26rem);
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ── SALAS PARA GRUPOS ── */
+#salas-grupos .esp-sala-grid {
+    grid-template-columns: 42fr 58fr;
+    align-items: center;
+}
+
+#salas-grupos .esp-sala-foto {
+    position: relative;
+    padding-top: clamp(3rem, 5.5vw, 5.5rem);
+}
+
+#salas-grupos .esp-subtitulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    background: transparent;
+    white-space: normal;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.0;
+    z-index: 2;
+    font-size: clamp(1.6rem, 3.2vw, 3.5rem);
+}
+
+#salas-grupos .esp-subtitulo .linea1 {
+    display: block;
+    font-size: 0.78em;
+    color: var(--c-naranja);
+    padding-left: 0.1em;
+}
+
+#salas-grupos .esp-subtitulo .linea2 {
+    display: block;
+    font-size: 1em;
+    color: var(--c-naranja);
+    background: var(--c-blanco);
+    padding-right: 0.3em;
+    position: relative;
+    top: -0.05em;
+}
+
+#salas-grupos .esp-sala-foto img {
+    width: 100%;
+    height: clamp(16rem, 28vw, 26rem);
+    display: block;
+    object-fit: cover;
+}
+
+#salas-grupos .esp-sala-derecha {
+    padding-left: clamp(1rem, 2.5vw, 3rem);
+    padding-top: 0;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#salas-grupos .esp-sala-derecha p {
+    margin-top: 0;
+    max-width: 22rem;
+}
+
+
+/* =========================================================
+   BOTÓN RESERVA
+   ========================================================= */
+.btn-reserva-wrap {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+    .gal-grid { columns: 3; }
+    .gal-lb-prev { left: -2rem; }
+    .gal-lb-next { right: -2rem; }
+}
+
+@media (max-width: 768px) {
+    .esp-sala-grid,
+    .esp-sala--derecha .esp-sala-grid,
+    #salas-grupos .esp-sala-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .esp-sala--derecha .esp-sala-derecha {
+        order: 0;
+        padding-right: 0;
+    }
+
+    .esp-sala-derecha { padding-left: 0; }
+
+    .esp-sala-foto img,
+    .esp-sala-foto--borde img {
+        width: 100%;
+        height: clamp(14rem, 52vw, 24rem);
+    }
+
+    .esp-sala-foto--borde { overflow: visible; }
+
+    .esp-subtitulo,
+    #sala-tornos .esp-subtitulo,
+    #salas-grupos .esp-subtitulo {
+        margin-left: 0;
+        padding-left: 0;
+        background: transparent;
+        white-space: normal;
+        font-size: clamp(1.4rem, 5.5vw, 2.5rem);
+    }
+
+    #sala-tornos .esp-sala-derecha { order: -1; }
+
+    #salas-grupos .esp-sala-foto {
+        position: static;
+        padding-top: 0;
+    }
+
+    #salas-grupos .esp-subtitulo {
+        position: static;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    #salas-grupos .esp-subtitulo .linea1,
+    #salas-grupos .esp-subtitulo .linea2 {
+        display: inline;
+        background: transparent;
+        padding-right: 0;
+        top: 0;
+        font-size: inherit;
+        padding-left: 0;
+    }
+
+    #salas-grupos .esp-sala-derecha { padding-left: 0; }
+    #salas-grupos .esp-sala-derecha p { max-width: 100%; }
+
+    .esp-sala-derecha p,
+    .esp-sala--derecha .esp-sala-derecha p,
+    #salas-grupos .esp-sala-derecha p {
+        margin-top: 0.75rem;
+        max-width: 100%;
+    }
+
+    .esp-intro-texto {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .gal-lb-prev { left: 0.25rem; }
+    .gal-lb-next { right: 0.25rem; }
+}
+
+@media (max-width: 680px) {
+    .esp-hero-fila {
+        flex-wrap: wrap;
+        gap: 1.5rem 0;
+    }
+
+    .esp-hero-texto { flex: 1 1 100%; }
+
+    .esp-hero-ilus {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .esp-hero-ilus img { max-width: 22rem; }
+
+    .esp-hero { padding: 2.5rem 0; }
+}
+
+@media (max-width: 480px) {
+    .gal-grid { columns: 2; }
+}

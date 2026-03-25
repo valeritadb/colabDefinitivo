@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Valeria De Barros">
+    <meta name="description" content="COLAB - Coworking cerámico by PRODESCO S.L. - Un espacio en Valencia para dar rienda suelta a tu creatividad"> <!--Descripción para motores de búsqueda-->
+
+    
+    <link rel="stylesheet" href="/styles/styles.css"> <!--Estilos Generales de Colab-->
+    <link rel="stylesheet" href="/styles/main.css"> <!--Estilos de Bootstrap-->
+    
+    <link rel="stylesheet" href="/styles/index.css"> <!--Estilos de Index-->
+    <link rel="stylesheet" href="/styles/componentes.css"> <!--Estilos de los componentes-->
+    <link rel="stylesheet" href="/styles/header.css"> <!--Estilos del header-->
+    <link rel="stylesheet" href="/styles/footer.css"> <!--Estillos del footer-->
+    <link rel="stylesheet" href="/styles/mediaQueries.css">
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!--Iconos de Bootstrap-->
+
+    <title>Colab Coworking by Prodesco S.L</title>
+
+</head>
+<body>
+    <!--HEADER GENERAL Y MENÚ DE NAVEGACIÓN-->
+    <header>
+
+        <!--HEADER CON LOS ENLACES EN VERTICAL-->
+        <nav class="main-nav navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!--Enlaces en vertical-->
+                <div class="navbar-nav flex-column align-items-end ms-auto">
+                <!--Espacio-->
+                    <a href="/pages/espacio.html" class="nav-link  link-colab">
+                    espacio
+                    <span class="icono-links position-relative d-inline-block ms-1">
+                    <img class="icono-links-hover position-absolute top-0 start-0" src="/multimedia/recursos_svg/azul_def_asterisco.svg" alt="" width="20" height="20">
+                    <img class="icono-links-normal" src="/multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20">
+                    </span>
+                </a>
+                <!--Servicios-->
+                    <a href="/pages/servicios.html" class="nav-link link-colab">
+                        servicios
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img src="/multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="/multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                        </span>
+                    </a>
+                <!--Contacto-->
+                    <a href="/pages/contacto.html" class="nav-link link-colab">
+                        contacto
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img src="/multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="/multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--PÁGINA PRINCIPAL Y CONTENIDO DE LA SECCIÓN-->
+    <main>
+
+       
+    </main>
+
+    <!--FOOTER GENERAL-->
+    <footer id="contacto" class="section footer-top">
+        <div class="footer-top-inner">
+            <!--Nav-->
+             <nav class="footer-nav" aria-label="Navegación footer">
+                <a href="/pages/espacio.html">espacio</a>
+                <a href="/pages/servicios.html">servicios</a>
+                <a href="/pages/contacto.html">contacto</a>
+            </nav>
+
+            <!-- * Contacto: dirección + instagram con icono -->
+            <div class="footer-contact align-items-end">
+                <p>encuéntranos en<br><a href="https://maps.app.goo.gl/PqAtMPgG8r34Rif7A">Carrer de Franco Tormo, 21ac, Patraix, 46007 València, Valencia</a></p>
+                <!-- * Enlace de instagram con icono SVG inline -->
+                <a href="https://instagram.com/colab.coworkinglab"
+                   class="footer-instagram"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram de COLAB">
+                   <i class="bi bi-instagram"></i>
+                    colab.coworkinglab
+                </a>
+            </div>
+        </div>
+
+        <!-- * Legal — el año lo rellena el JS automáticamente -->
+        <div class="footer-legal">
+            <a href="#">aviso legal</a>
+            <a href="#">términos y condiciones</a>
+            <a href="#">política de cookies</a>
+            <p class="footer-copyright">© <span class="year"></span> COLAB by Prodesco. Todos los derechos reservados.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="/scripts/general.js" defer></script> <!--Funcionalidades generales (JS)-->
+    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script> <!--Funcionalidades de Bootstrap (JS)-->
+    <script src="/scripts/slider.js" defer></script>
+</body>
+</html>
