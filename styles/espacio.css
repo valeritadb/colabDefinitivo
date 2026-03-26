@@ -1,7 +1,9 @@
 /* *********************************************************
    ESPACIO.CSS — Estilos específicos página espacio
    ********************************************************* */
-
+    main{
+        align-items: center;
+    }
 
 /* =========================================================
    HERO
@@ -227,7 +229,7 @@
    SALAS — WRAPPER
    ========================================================= */
 #salas-wrapper {
-    max-width: 50%;
+    max-width: 72rem;
     margin: 0 auto;
     padding: 0 clamp(1.5rem, 4vw, 6vw);
 }
@@ -236,25 +238,31 @@
     padding: clamp(2.5rem, 5vw, 6rem) 0;
 }
 
-/* ── Grid base ── */
+/* ── Grid: 50/50, misma proporción para las 3 salas ── */
 .sala-inner {
     display: grid;
-    grid-template-columns: 42fr 58fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 0;
+    gap: 0 clamp(1.5rem, 3vw, 3rem);
 }
 
-.sala-inner--invertida {
-    grid-template-columns: 45fr 55fr;
+/* Invertida: solo cambia el orden visual — el grid es idéntico */
+.sala-inner--invertida .sala-foto-wrap {
+    order: 1;
+}
+.sala-inner--invertida .sala-texto-wrap {
+    order: -1;
 }
 
-/* ── Foto wrap: ancla el título absoluto ── */
+/* ── Foto wrap ── */
 .sala-foto-wrap {
-    position: relative;
+    width: 100%;
 }
 
-/* ── Contenedor de imagen: altura individual por #id ── */
+/* ── Contenedor imagen: misma altura en las 3 salas ── */
 .sala-img-box {
+    width: 100%;
+    height: clamp(16rem, 28vw, 26rem);
     overflow: hidden;
 }
 
@@ -269,141 +277,24 @@
 .sala-texto-wrap {
     display: flex;
     flex-direction: column;
+    gap: 2rem;           /* 2rem fijos entre título y párrafo */
 }
 
+/* ── Título: mismo tamaño en las 3 ── */
+.sala-titulo {
+    font-size: clamp(1rem, 2.8vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--c-naranja);
+    margin: 0;
+}
+
+/* ── Párrafo ── */
 .sala-texto-wrap p {
     font-size: clamp(0.85rem, 1.05vw, 1rem);
     line-height: 1.7;
     color: var(--c-negro);
-    max-width: 22rem;
-}
-
-/* ── Fuente compartida títulos ── */
-.sala-titulo {
-    font-size: clamp(2rem, 4vw, 4.5rem);
-    font-weight: 400;
-    line-height: 1.0;
-    color: var(--c-naranja);
-}
-
-
-/* =========================================================
-   SALA DE TORNOS
-   ========================================================= */
-
-/* Altura propia de esta imagen — ajusta aquí */
-#img-tornos {
-    height: 25rem;
-    width: auto;
-}
-
-#sala-tornos .sala-texto-wrap {
-    padding-left: clamp(1rem, 2.5vw, 3rem);
-    justify-content: flex-start;
-    padding-top: clamp(3rem, 5vw, 5rem);
-}
-
-#titulo-tornos {
-    position: absolute;
-    top: -1.5rem;
-    right: -15rem;
-    background: var(--c-blanco);
-    padding: 0.1em 0 0.1em 0.5em;
-    white-space: nowrap;
-    font-size: clamp(1rem, 2.8vw, 3.2rem);
-    z-index: 2;
-}
-
-#sala-tornos .sala-inner {
-    align-items: end;
-}
-
-#texto-tornos {
-    justify-content: flex-end;
-    padding-bottom: 0; /* ajusta el espacio desde el borde inferior */
-}
-
-#texto-tornos p {
-   margin-top: clamp(0.5rem, 2vw, 1.5rem);
-}
-
-
-/* =========================================================
-   ESPACIOS INDIVIDUALES
-   ========================================================= */
-
-/* Altura propia de esta imagen — ajusta aquí */
-#img-individuales {
-    height: clamp(16rem, 28vw, 26rem);
-    width: calc(100% + clamp(2rem, 5vw, 5vw));
-}
-
-#foto-individuales {
-    overflow: hidden;
-}
-
-#sala-individuales .sala-texto-wrap {
-    padding-right: clamp(1rem, 2.5vw, 3rem);
-    justify-content: center;
-}
-
-#titulo-individuales {
-    position: static;
-    background: transparent;
-    margin-bottom: clamp(1rem, 2.5vw, 2rem);
-}
-
-#texto-individuales p {
-    max-width: 22rem;
-}
-
-
-/* =========================================================
-   SALAS PARA GRUPOS
-   ========================================================= */
-
-#sala-grupos .sala-foto-wrap {
-    padding-top: clamp(3rem, 5.5vw, 5.5rem);
-}
-
-/* Altura propia de esta imagen — ajusta aquí */
-#img-grupos {
-    height: clamp(16rem, 28vw, 26rem);
-}
-
-#titulo-grupos {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: transparent;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.titulo-linea1 {
-    display: block;
-    font-size: 0.75em;
-    color: var(--c-naranja);
-    padding-left: 0.1em;
-}
-
-.titulo-linea2 {
-    display: block;
-    font-size: 1em;
-    color: var(--c-naranja);
-    background: var(--c-blanco);
-    padding-right: 0.4em;
-}
-
-#sala-grupos .sala-texto-wrap {
-    padding-left: clamp(1rem, 2.5vw, 3rem);
-    justify-content: center;
-}
-
-#texto-grupos p {
-    max-width: 22rem;
+    margin: 0;
 }
 
 
@@ -415,56 +306,31 @@
     .sala-inner,
     .sala-inner--invertida {
         grid-template-columns: 1fr;
+        gap: 1rem 0;
     }
 
-    .sala-inner--invertida .sala-texto-wrap {
-        order: -1;
-    }
+    /* En móvil: título arriba, foto, texto — para todas */
+    .sala-texto-wrap  { order: -1; }
+    .sala-foto-wrap   { order: 1;  }
 
-    /* Cada img-box vuelve a altura responsive en móvil */
+    /* Individuales: mismo orden que las otras en móvil */
+    .sala-inner--invertida .sala-foto-wrap   { order: 1; }
+    .sala-inner--invertida .sala-texto-wrap  { order: -1; }
+
     .sala-img-box {
-        height: clamp(14rem, 52vw, 22rem) !important;
-        width: 100% !important;
+        height: clamp(14rem, 52vw, 22rem);
     }
 
     .sala-texto-wrap {
-        padding: 1rem 0 0 0 !important;
+        gap: 0.75rem;
+    }
+
+    .sala-titulo {
+        font-size: clamp(1.4rem, 5.5vw, 2.5rem);
     }
 
     .sala-texto-wrap p {
         max-width: 100%;
-    }
-
-    .sala-titulo,
-    #titulo-tornos,
-    #titulo-grupos {
-        position: static !important;
-        transform: none !important;
-        background: transparent !important;
-        white-space: normal !important;
-        font-size: clamp(1.4rem, 5.5vw, 2.5rem) !important;
-        margin-bottom: 0.5rem;
-        padding: 0 !important;
-    }
-
-    #titulo-grupos {
-        display: block !important;
-    }
-
-    .titulo-linea1,
-    .titulo-linea2 {
-        display: inline !important;
-        background: transparent !important;
-        font-size: inherit !important;
-        padding: 0 !important;
-    }
-
-    #sala-grupos .sala-foto-wrap {
-        padding-top: 0 !important;
-    }
-
-    #foto-individuales {
-        overflow: visible;
     }
 }
 
