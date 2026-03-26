@@ -28,7 +28,7 @@
 /* == FUENTES IMPORTADAS ==*/
 @font-face {
     font-family: 'FutureBK';
-    src: url('/fonts/Futurebk.ttf');
+    src: url('./fonts/Futurebk.ttf');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
     font-family: 'FutureBookIT';
-    src: url(/fonts/Futura\ Book\ Italic\ font.ttf);
+    src: url(./fonts/Futura\ Book\ Italic\ font.ttf);
     font-weight: 400;
     font-style: normal;
     font-display: swap;
