@@ -224,164 +224,250 @@
 
 
 /* =========================================================
-   SECCIONES DE SALA
+   SALAS — WRAPPER
    ========================================================= */
-.esp-sala {
-    padding: clamp(2.5rem, 5vw, 7rem) 0;
+#salas-wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 4vw, 6vw);
 }
 
-.esp-sala-grid {
+#salas-wrapper section {
+    padding: clamp(2.5rem, 5vw, 6rem) 0;
+}
+
+/* ── Grid base ── */
+.sala-inner {
     display: grid;
     grid-template-columns: 42fr 58fr;
-    align-items: start;
+    align-items: center;
     gap: 0;
 }
 
-.esp-sala-foto img {
-    width: 100%;
-    height: clamp(16rem, 28vw, 26rem);
-    object-fit: cover;
-    display: block;
-}
-
-.esp-sala-derecha {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: clamp(1rem, 2.5vw, 3rem);
-}
-
-/* Título solapado sobre la foto */
-.esp-subtitulo {
-    font-size: clamp(1.6rem, 3.2vw, 3.5rem);
-    font-weight: 400;
-    line-height: 1.05;
-    color: var(--c-naranja);
-    background: var(--c-blanco);
-    margin-left: clamp(-6rem, -10vw, -12rem);
-    padding: 0.12em 0.6em 0.12em 0;
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-.esp-sala-derecha p {
-    font-size: clamp(0.85rem, 1.05vw, 1rem);
-    line-height: 1.7;
-    max-width: 22rem;
-    margin-top: clamp(1.5rem, 4.5vw, 6rem);
-    color: var(--c-negro);
-}
-
-
-/* ── SALA DE TORNOS ── */
-#sala-tornos .esp-subtitulo {
-    white-space: nowrap;
-    font-size: clamp(1rem, 2.8vw, 3.2rem);
-}
-
-
-/* ── ESPACIOS INDIVIDUALES ── */
-.esp-sala--derecha .esp-sala-grid {
+.sala-inner--invertida {
     grid-template-columns: 45fr 55fr;
 }
 
-.esp-sala--derecha .esp-sala-derecha {
-    order: -1;
-    padding-left: 0;
-    padding-right: clamp(1rem, 2.5vw, 3rem);
+/* ── Foto wrap: ancla el título absoluto ── */
+.sala-foto-wrap {
+    position: relative;
 }
 
-.esp-sala--derecha .esp-subtitulo {
-    margin-left: 0;
-    padding-left: 0;
-    background: transparent;
-    white-space: normal;
+/* ── Contenedor de imagen: altura individual por #id ── */
+.sala-img-box {
+    overflow: hidden;
 }
 
-.esp-sala--derecha .esp-sala-derecha p {
-    margin-top: clamp(1rem, 2.5vw, 2.5rem);
-}
-
-.esp-sala-foto--borde { overflow: hidden; }
-
-.esp-sala-foto--borde img {
-    width: calc(100% + clamp(2rem, 5vw, 7vw));
-    height: clamp(16rem, 28vw, 26rem);
+.sala-img-box img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
-
-/* ── SALAS PARA GRUPOS ── */
-#salas-grupos .esp-sala-grid {
-    grid-template-columns: 42fr 58fr;
-    align-items: center;
-}
-
-#salas-grupos .esp-sala-foto {
-    position: relative;
-    padding-top: clamp(3rem, 5.5vw, 5.5rem);
-}
-
-#salas-grupos .esp-subtitulo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 0;
-    background: transparent;
-    white-space: normal;
-    padding: 0;
+/* ── Texto wrap ── */
+.sala-texto-wrap {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+}
+
+.sala-texto-wrap p {
+    font-size: clamp(0.85rem, 1.05vw, 1rem);
+    line-height: 1.7;
+    color: var(--c-negro);
+    max-width: 22rem;
+}
+
+/* ── Fuente compartida títulos ── */
+.sala-titulo {
+    font-size: clamp(2rem, 4vw, 4.5rem);
+    font-weight: 400;
     line-height: 1.0;
-    z-index: 2;
-    font-size: clamp(1.6rem, 3.2vw, 3.5rem);
-}
-
-#salas-grupos .esp-subtitulo .linea1 {
-    display: block;
-    font-size: 0.78em;
     color: var(--c-naranja);
-    padding-left: 0.1em;
 }
 
-#salas-grupos .esp-subtitulo .linea2 {
-    display: block;
-    font-size: 1em;
-    color: var(--c-naranja);
-    background: var(--c-blanco);
-    padding-right: 0.3em;
-    position: relative;
-    top: -0.05em;
+
+/* =========================================================
+   SALA DE TORNOS
+   ========================================================= */
+
+/* Altura propia de esta imagen — ajusta aquí */
+#img-tornos {
+    height: 25rem;
+    width: auto;
 }
 
-#salas-grupos .esp-sala-foto img {
-    width: 100%;
-    height: clamp(16rem, 28vw, 26rem);
-    display: block;
-    object-fit: cover;
-}
-
-#salas-grupos .esp-sala-derecha {
+#sala-tornos .sala-texto-wrap {
     padding-left: clamp(1rem, 2.5vw, 3rem);
-    padding-top: 0;
-    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: clamp(3rem, 5vw, 5rem);
+}
+
+#titulo-tornos {
+    position: absolute;
+    top: -1.5rem;
+    right: -15rem;
+    background: var(--c-blanco);
+    padding: 0.1em 0 0.1em 0.5em;
+    white-space: nowrap;
+    font-size: clamp(1rem, 2.8vw, 3.2rem);
+    z-index: 2;
+}
+
+#sala-tornos .sala-inner {
+    align-items: end;
+}
+
+#texto-tornos {
+    justify-content: flex-end;
+    padding-bottom: 0; /* ajusta el espacio desde el borde inferior */
+}
+
+#texto-tornos p {
+   margin-top: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+
+/* =========================================================
+   ESPACIOS INDIVIDUALES
+   ========================================================= */
+
+/* Altura propia de esta imagen — ajusta aquí */
+#img-individuales {
+    height: clamp(16rem, 28vw, 26rem);
+    width: calc(100% + clamp(2rem, 5vw, 5vw));
+}
+
+#foto-individuales {
+    overflow: hidden;
+}
+
+#sala-individuales .sala-texto-wrap {
+    padding-right: clamp(1rem, 2.5vw, 3rem);
     justify-content: center;
 }
 
-#salas-grupos .esp-sala-derecha p {
-    margin-top: 0;
+#titulo-individuales {
+    position: static;
+    background: transparent;
+    margin-bottom: clamp(1rem, 2.5vw, 2rem);
+}
+
+#texto-individuales p {
     max-width: 22rem;
 }
 
 
 /* =========================================================
-   BOTÓN RESERVA
+   SALAS PARA GRUPOS
    ========================================================= */
-.btn-reserva-wrap {
-    padding: clamp(2rem, 5vw, 4rem) 0;
+
+#sala-grupos .sala-foto-wrap {
+    padding-top: clamp(3rem, 5.5vw, 5.5rem);
 }
+
+/* Altura propia de esta imagen — ajusta aquí */
+#img-grupos {
+    height: clamp(16rem, 28vw, 26rem);
+}
+
+#titulo-grupos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titulo-linea1 {
+    display: block;
+    font-size: 0.75em;
+    color: var(--c-naranja);
+    padding-left: 0.1em;
+}
+
+.titulo-linea2 {
+    display: block;
+    font-size: 1em;
+    color: var(--c-naranja);
+    background: var(--c-blanco);
+    padding-right: 0.4em;
+}
+
+#sala-grupos .sala-texto-wrap {
+    padding-left: clamp(1rem, 2.5vw, 3rem);
+    justify-content: center;
+}
+
+#texto-grupos p {
+    max-width: 22rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE SALAS
+   ========================================================= */
+@media (max-width: 768px) {
+
+    .sala-inner,
+    .sala-inner--invertida {
+        grid-template-columns: 1fr;
+    }
+
+    .sala-inner--invertida .sala-texto-wrap {
+        order: -1;
+    }
+
+    /* Cada img-box vuelve a altura responsive en móvil */
+    .sala-img-box {
+        height: clamp(14rem, 52vw, 22rem) !important;
+        width: 100% !important;
+    }
+
+    .sala-texto-wrap {
+        padding: 1rem 0 0 0 !important;
+    }
+
+    .sala-texto-wrap p {
+        max-width: 100%;
+    }
+
+    .sala-titulo,
+    #titulo-tornos,
+    #titulo-grupos {
+        position: static !important;
+        transform: none !important;
+        background: transparent !important;
+        white-space: normal !important;
+        font-size: clamp(1.4rem, 5.5vw, 2.5rem) !important;
+        margin-bottom: 0.5rem;
+        padding: 0 !important;
+    }
+
+    #titulo-grupos {
+        display: block !important;
+    }
+
+    .titulo-linea1,
+    .titulo-linea2 {
+        display: inline !important;
+        background: transparent !important;
+        font-size: inherit !important;
+        padding: 0 !important;
+    }
+
+    #sala-grupos .sala-foto-wrap {
+        padding-top: 0 !important;
+    }
+
+    #foto-individuales {
+        overflow: visible;
+    }
+}
+
 
 
 /* =========================================================
@@ -394,69 +480,7 @@
 }
 
 @media (max-width: 768px) {
-    .esp-sala-grid,
-    .esp-sala--derecha .esp-sala-grid,
-    #salas-grupos .esp-sala-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .esp-sala--derecha .esp-sala-derecha {
-        order: 0;
-        padding-right: 0;
-    }
-
-    .esp-sala-derecha { padding-left: 0; }
-
-    .esp-sala-foto img,
-    .esp-sala-foto--borde img {
-        width: 100%;
-        height: clamp(14rem, 52vw, 24rem);
-    }
-
-    .esp-sala-foto--borde { overflow: visible; }
-
-    .esp-subtitulo,
-    #sala-tornos .esp-subtitulo,
-    #salas-grupos .esp-subtitulo {
-        margin-left: 0;
-        padding-left: 0;
-        background: transparent;
-        white-space: normal;
-        font-size: clamp(1.4rem, 5.5vw, 2.5rem);
-    }
-
-    #sala-tornos .esp-sala-derecha { order: -1; }
-
-    #salas-grupos .esp-sala-foto {
-        position: static;
-        padding-top: 0;
-    }
-
-    #salas-grupos .esp-subtitulo {
-        position: static;
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-
-    #salas-grupos .esp-subtitulo .linea1,
-    #salas-grupos .esp-subtitulo .linea2 {
-        display: inline;
-        background: transparent;
-        padding-right: 0;
-        top: 0;
-        font-size: inherit;
-        padding-left: 0;
-    }
-
-    #salas-grupos .esp-sala-derecha { padding-left: 0; }
-    #salas-grupos .esp-sala-derecha p { max-width: 100%; }
-
-    .esp-sala-derecha p,
-    .esp-sala--derecha .esp-sala-derecha p,
-    #salas-grupos .esp-sala-derecha p {
-        margin-top: 0.75rem;
-        max-width: 100%;
-    }
 
     .esp-intro-texto {
         margin-left: 0;

@@ -5,7 +5,7 @@
     --c-naranja: #E57F12;
     --c-azul: #9CCDCE;
     --c-negro: #000000;
-    --c-blanco: whitesmoke;
+    --c-blanco: rgb(255, 255, 255);
 
     /* Tipografía */
     --font-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
