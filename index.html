@@ -65,12 +65,14 @@
 
     <!--PÁGINA PRINCIPAL Y CONTENIDO DE LA SECCIÓN (INDEX)-->
     <main>
-        <!--Hero principal con ilustraciones y logo-->
+      <!--Hero principal con ilustraciones y logo-->
         <div class="hero-stage">
-            <svg class="hero-svg" viewBox="0 0 1400 710" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COLAB — Coworking Cerámico">
+
+            <!-- SVG DESKTOP (igual que antes) -->
+            <svg class="hero-svg hero-svg--desktop" viewBox="0 0 1400 710" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COLAB — Coworking Cerámico">
                 <defs>
                     <clipPath id="texto-clip">
-                    <rect x="260" y="290" width="890" height="210"/>
+                        <rect x="260" y="290" width="890" height="210"/>
                     </clipPath>
                 </defs>
 
@@ -78,28 +80,56 @@
                 <image href="./multimedia/ilustraciones_svg/ILUS MAIN.svg" x="90" y="300" width="430" height="370" preserveAspectRatio="xMinYMin meet"/>
 
                 <!-- Gato derecha -->
-                <image href="./multimedia/ilustraciones_svg/ILUS MAIN GATO.svg" x="950" y="-20" width="390" height="352" preserveAspectRatio="xMinYMin meet"/>
+                <image href="./multimedia/ilustraciones_svg/ILUS MAIN GATO.svg" x="930" y="-20" width="390" height="352" preserveAspectRatio="xMinYMin meet"/>
 
                 <!-- Texto COLAB -->
-                <text  id="hero-text" x="270" y="490" font-family="FutureBK, sans-serif" font-size="240" letter-spacing="8" text-anchor="start" clip-path="url(#texto-clip)">
+                <text id="hero-text" x="270" y="490" font-family="FutureBK, sans-serif" font-size="240" letter-spacing="8" text-anchor="start" clip-path="url(#texto-clip)">
                     COLAB
                 </text>
             </svg>
+
+                <!-- SVG MÓVIL (CO / LAB en dos líneas) -->
+                <svg class="hero-svg hero-svg--mobile" viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COLAB — Coworking Cerámico">
+                    <defs>
+                        <clipPath id="texto-clip-mobile">
+                            <rect x="30" y="180" width="440" height="380"/>
+                        </clipPath>
+                    </defs>
+
+                    <!-- Hombre izquierda -->
+                    <image href="./multimedia/ilustraciones_svg/ILUS MAIN.svg" x="15" y="370" width="290" height="250" preserveAspectRatio="xMinYMin meet"/>
+
+                    <!-- Gato derecha -->
+                    <!--<image href="./multimedia/ilustraciones_svg/ILUS MAIN GATO.svg" x="270" y="20" width="260" height="235" preserveAspectRatio="xMinYMin meet"/>-->
+
+                    <!-- Texto CO -->
+                    <text id="hero-text-mobile" x="120" y="350" font-family="FutureBK, sans-serif" font-size="150" letter-spacing="8" text-anchor="start" clip-path="url(#texto-clip-mobile)">CO</text>
+
+                    <!-- Texto LAB -->
+                    <text x="120" y="480" font-family="FutureBK, sans-serif" font-size="150" letter-spacing="8" text-anchor="start" clip-path="url(#texto-clip-mobile)">LAB</text>
+                </svg>
+
         </div>
        <!-- Sección Espacio -->
-        <section id="espacio" class="seccion-intro">
+        <section id="espacio" class="seccion-intro section-espacio">
             <div class="container">
-                <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <h2 class="titulo-seccion">ESPACIO</h2>
-                    <p class="texto-intro">Con el fin de crear comunidad y expandir los conocimientos de la cerámica nace COLAB. Un lugar donde dar rienda suelta a la creatividad a través de la experimentación con materiales cerámicos. Las instalaciones cuentan con toda la equipación necesaria para desarrollar las actividades, así como áreas específicas destinadas a diferentes procesos.</p>
-                    <a href="./pages/espacio.html" class="link-ver-mas"><img class="icono-links-normal" src="./multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20"> ver más</a>
-                </div>
-                <div class="col-lg-6">
-                    <div class="contenedor-imagen">
-                    <img src="./multimedia/ilustraciones_svg/ILUS ESPACIO.svg" alt="Ilustración del espacio COLAB" class="imagen-seccion">
+                <div class="section-inner">
+                    <!-- Título grande a la izquierda -->
+                    <div class="col-titulo-grande">
+                        <h2 class="titulo-seccion">ESPACIO</h2>
                     </div>
-                </div>
+
+                    <!-- Texto + link a la derecha -->
+                    <div class="col-texto">
+                        <p>Con el fin de crear comunidad y expandir los conocimientos de la cerámica nace COLAB. Un lugar donde dar rienda suelta a la creatividad a través de la experimentación con materiales cerámicos.</p>
+                        <p>Las instalaciones cuentan con toda la equipación necesaria para desarrollar las actividades, así como áreas específicas destinadas a diferentes procesos.</p>
+                        <a href="./pages/espacio.html" class="link-ver-mas">
+                            <span class="link-ver-mas-icono" aria-hidden="true">
+                                <img class="icono-links-normal" src="./multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20">
+                            </span>
+                            <span class="link-ver-mas-texto">ver más</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
