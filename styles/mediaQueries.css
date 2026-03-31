@@ -5,8 +5,8 @@
 @media (max-width: 991px) {
 
   /* Hero móvil: intercambia SVGs */
-.hero-svg--desktop { display: block; }
-.hero-svg--mobile  { display: none; }
+.hero-svg--desktop { display: none; }
+.hero-svg--mobile  { display: block; }
 
 .hero-stage {
     height: clamp(80vh, 120vw, 100vh);
