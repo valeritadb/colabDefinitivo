@@ -1,93 +1,43 @@
 /* *********************************************************
-   ESPACIO.CSS — Estilos específicos página espacio
-   ********************************************************* */
-    main{
-        align-items: center;
-    }
-
-/* =========================================================
-   HERO
-   ========================================================= */
-.esp-hero {
-    height: 100svh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: clamp(4rem, 7vw, 6.5rem);
-    padding-bottom: clamp(4rem, 7vw, 6.5rem);
-    box-sizing: border-box;
+ESPACIO.CSS
+********************************************************* */
+#titulo_noLinea{
+    text-decoration: none;
 }
-
-.esp-hero .esp-contenedor {
+/* Ilustración hero */
+.ilustracion-seccion {
     width: 100%;
-}
-
-.esp-hero-inner {
-    max-width: 40rem;
-    margin: 0 auto;
-}
-
-.esp-titulo {
-    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
-    font-weight: 400;
-    line-height: 1;
-    color: var(--c-naranja);
-    text-decoration: underline;
-    text-decoration-thickness: 0.07em;
-    text-underline-offset: 0.12em;
-    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
-}
-
-.esp-hero-fila {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 0 clamp(0.5rem, 2vw, 2.5rem);
-}
-
-.esp-hero-texto {
-    flex: 0 0 30%;
-    min-width: 0;
-    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
-    line-height: 1.75;
-}
-
-.esp-hero-ilus {
-    flex: 1 1 0;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-}
-
-.esp-hero-ilus img {
-    width: 100%;
-    max-width: 28rem;
     height: auto;
+    display: block;
 }
 
-
-/* =========================================================
-   INTRO
-   ========================================================= */
-.esp-intro {
-    padding-top: clamp(0.5rem, 2vw, 1.5rem);
-    padding-bottom: clamp(2rem, 4.5vw, 5rem);
+/* Imagen de sala: ocupa toda la columna con altura fija */
+.sala-img-box {
+    width: 100%;
+    height: clamp(16rem, 28vw, 26rem);
+    overflow: hidden;
 }
 
+.sala-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Intro párrafo */
 .esp-intro-texto {
-    margin: 0 auto;
-    max-width: 40rem;
     font-size: clamp(0.95rem, 1.15vw, 1.1rem);
     line-height: 1.72;
 }
 
-
 /* =========================================================
-   GALERÍA MASONRY
-   ========================================================= */
+GALERÍA MASONRY — sin cambios
+========================================================= */
 .esp-galeria {
     overflow: hidden;
     margin-bottom: clamp(3.5rem, 7vw, 8rem);
+    padding: 1rem;
 }
 
 .gal-grid {
@@ -105,10 +55,9 @@
     cursor: pointer;
 }
 
-/* Alturas variables para efecto masonry */
 .gal-item:nth-child(5n+1) img { height: clamp(11rem, 17vw, 16rem); }
 .gal-item:nth-child(5n+2) img { height: clamp(15rem, 23vw, 21rem); }
-.gal-item:nth-child(5n+3) img { height: clamp(9rem,  13vw, 12rem); }
+.gal-item:nth-child(5n+3) img { height: clamp(9rem, 13vw, 12rem); }
 .gal-item:nth-child(5n+4) img { height: clamp(17rem, 26vw, 24rem); }
 .gal-item:nth-child(5n)   img { height: clamp(12rem, 18vw, 17rem); }
 
@@ -119,7 +68,6 @@
     transition: filter 0.3s ease;
 }
 
-/* Overlay azul en hover */
 .gal-item::after {
     content: '';
     position: absolute;
@@ -132,10 +80,9 @@
 
 .gal-item:hover::after { opacity: 0.42; }
 
-
 /* =========================================================
-   LIGHTBOX
-   ========================================================= */
+LIGHTBOX — sin cambios
+========================================================= */
 .gal-lightbox {
     position: fixed;
     inset: 0;
@@ -172,7 +119,7 @@
 }
 
 .gal-lightbox img.lb-exit-left  { opacity: 0; transform: translateX(-36px); }
-.gal-lightbox img.lb-exit-right { opacity: 0; transform: translateX(36px);  }
+.gal-lightbox img.lb-exit-right { opacity: 0; transform: translateX(36px); }
 .gal-lightbox img.lb-enter      { opacity: 0; }
 
 .gal-lb-close {
@@ -209,7 +156,7 @@
 }
 
 .gal-lb-arrow:hover { color: var(--c-azul); }
-.gal-lb-prev { left: -3.5rem; }
+.gal-lb-prev { left:  -3.5rem; }
 .gal-lb-next { right: -3.5rem; }
 
 .gal-lb-counter {
@@ -224,155 +171,19 @@
     z-index: 10000;
 }
 
-
 /* =========================================================
-   SALAS — WRAPPER
-   ========================================================= */
-#salas-wrapper {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 0 clamp(1.5rem, 4vw, 6vw);
-}
-
-#salas-wrapper section {
-    padding: clamp(2.5rem, 5vw, 6rem) 0;
-}
-
-/* ── Grid: 50/50, misma proporción para las 3 salas ── */
-.sala-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 0 clamp(1.5rem, 3vw, 3rem);
-}
-
-/* Invertida: solo cambia el orden visual — el grid es idéntico */
-.sala-inner--invertida .sala-foto-wrap {
-    order: 1;
-}
-.sala-inner--invertida .sala-texto-wrap {
-    order: -1;
-}
-
-/* ── Foto wrap ── */
-.sala-foto-wrap {
-    width: 100%;
-}
-
-/* ── Contenedor imagen: misma altura en las 3 salas ── */
-.sala-img-box {
-    width: 100%;
-    height: clamp(16rem, 28vw, 26rem);
-    overflow: hidden;
-}
-
-.sala-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* ── Texto wrap ── */
-.sala-texto-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;           /* 2rem fijos entre título y párrafo */
-}
-
-/* ── Título: mismo tamaño en las 3 ── */
-.sala-titulo {
-    font-size: clamp(1rem, 2.8vw, 3.2rem);
-    font-weight: 400;
-    line-height: 1.1;
-    color: var(--c-naranja);
-    margin: 0;
-}
-
-/* ── Párrafo ── */
-.sala-texto-wrap p {
-    font-size: clamp(0.85rem, 1.05vw, 1rem);
-    line-height: 1.7;
-    color: var(--c-negro);
-    margin: 0;
-}
-
-
-/* =========================================================
-   RESPONSIVE SALAS
-   ========================================================= */
-@media (max-width: 768px) {
-
-    .sala-inner,
-    .sala-inner--invertida {
-        grid-template-columns: 1fr;
-        gap: 1rem 0;
-    }
-
-    /* En móvil: título arriba, foto, texto — para todas */
-    .sala-texto-wrap  { order: -1; }
-    .sala-foto-wrap   { order: 1;  }
-
-    /* Individuales: mismo orden que las otras en móvil */
-    .sala-inner--invertida .sala-foto-wrap   { order: 1; }
-    .sala-inner--invertida .sala-texto-wrap  { order: -1; }
-
-    .sala-img-box {
-        height: clamp(14rem, 52vw, 22rem);
-    }
-
-    .sala-texto-wrap {
-        gap: 0.75rem;
-    }
-
-    .sala-titulo {
-        font-size: clamp(1.4rem, 5.5vw, 2.5rem);
-    }
-
-    .sala-texto-wrap p {
-        max-width: 100%;
-    }
-}
-
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+RESPONSIVE
+========================================================= */
 @media (max-width: 900px) {
-    .gal-grid { columns: 3; }
-    .gal-lb-prev { left: -2rem; }
+    .gal-grid   { columns: 3; }
+    .gal-lb-prev { left:  -2rem; }
     .gal-lb-next { right: -2rem; }
 }
 
 @media (max-width: 768px) {
-
-
-    .esp-intro-texto {
-        margin-left: 0;
-        max-width: 100%;
-    }
-
-    .gal-lb-prev { left: 0.25rem; }
-    .gal-lb-next { right: 0.25rem; }
-}
-
-@media (max-width: 680px) {
-    .esp-hero-fila {
-        flex-wrap: wrap;
-        gap: 1.5rem 0;
-    }
-
-    .esp-hero-texto { flex: 1 1 100%; }
-
-    .esp-hero-ilus {
-        flex: 1 1 100%;
-        justify-content: center;
-    }
-
-    .esp-hero-ilus img { max-width: 22rem; }
-
-    .esp-hero { padding: 2.5rem 0; }
+    .sala-img-box { height: clamp(14rem, 52vw, 22rem); }
+    .gal-lb-prev  { left:  0.25rem; }
+    .gal-lb-next  { right: 0.25rem; }
 }
 
 @media (max-width: 480px) {

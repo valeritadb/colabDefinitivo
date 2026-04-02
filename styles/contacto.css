@@ -1,40 +1,19 @@
-.cnt-section {
-    padding-top: clamp(6rem, 10vw, 9rem);
-    padding-bottom: clamp(3rem, 6vw, 5rem);
-}
+/* *********************************************************
+CONTACTO.CSS
+********************************************************* */
 
-/* Grid superior (Bootstrap lo maneja, solo margen) */
-.cnt-top {
-    margin-bottom: clamp(3rem, 7vw, 6rem);
-}
-
-/* Columna izquierda */
-.cnt-col-izq {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-}
-
+/* Título — usa .titulo-seccion de componentes.css,
+   solo sobreescribimos el white-space para que no se rompa */
 .cnt-titulo {
-    font-size: clamp(2rem, 4vw, 4rem);
-    font-weight: 600;
-    color: var(--c-naranja);
-    text-decoration: underline;
-    text-decoration-thickness: 0.12rem;
-    text-underline-offset: 0.35rem;
-    line-height: 1;
-    margin: 0 0 clamp(1.25rem, 2.5vw, 2rem) 0;
-    white-space: nowrap;
-    cursor: default;
+    white-space: normal;
 }
 
+/* Bloque de textos informativos */
 .cnt-texto {
     cursor: default;
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 2.5vw, 1.75rem);
-    width: 100%;
     margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
 }
 
@@ -43,6 +22,11 @@
     line-height: 1.65;
     color: var(--c-negro);
     margin: 0;
+}
+
+.cnt-texto a {
+    color: var(--c-negro);
+    text-decoration: underline;
 }
 
 /* Instagram link */
@@ -56,9 +40,7 @@
     transition: opacity 0.2s ease;
 }
 
-.cnt-ig:hover { 
-    opacity: 0.65; 
-}
+.cnt-ig:hover { opacity: 0.65; }
 
 .cnt-ig svg {
     width: 1.15em;
@@ -66,11 +48,9 @@
     flex-shrink: 0;
 }
 
-/* Formulario - sobreescribe Bootstrap */
+/* ── Formulario ── */
 .cnt-col-der {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    gap: 0;
 }
 
 .cnt-field label {
@@ -79,7 +59,6 @@
     font-weight: 500;
 }
 
-/* Controles de formulario */
 .cnt-control {
     border: 3px solid var(--c-naranja) !important;
     border-radius: 8px !important;
@@ -87,7 +66,6 @@
     font-family: var(--font-base, sans-serif) !important;
     font-size: clamp(0.9rem, 1vw, 1rem) !important;
     color: var(--c-negro) !important;
-    
     box-shadow: none !important;
     transition: border-color 0.2s ease !important;
 }
@@ -98,15 +76,13 @@
 }
 
 .cnt-textarea {
-    min-height: 14rem;
     resize: vertical;
+    height: 14rem;
 }
 
-/* Botón enviar */
 .cnt-btn {
     padding: 0.55em 2em;
     font-size: clamp(0.85rem, 1vw, 0.95rem);
-    border-width: 2px;
     letter-spacing: 0.1em;
     border-radius: 8px !important;
     border: 3px solid var(--c-naranja) !important;
@@ -114,37 +90,20 @@
     transition: all var(--trans-secundaria);
     font-weight: 500;
 }
-.cnt-btn:hover{
+
+.cnt-btn:hover {
     background-color: var(--c-azul);
     border: 3px solid var(--c-azul) !important;
     color: var(--c-blanco);
 }
 
-/* Validación Bootstrap */
 .cnt-form .is-invalid {
     border-color: #dc3545 !important;
 }
 
-/* Mapa inferior */
-.cnt-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(0.75rem, 1.5vw, 1rem);
-    width: 100%;
-}
-
-.cnt-mapa-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(1.5rem, 3vw, 3rem);
-    width: 100%;
-}
-
+/* ── Mapa ── */
 .cnt-mapa {
-    flex: 0 0 auto;
-    width: clamp(22rem, 50vw, 42rem);
+    width: 100%;
     border-radius: 4px;
     overflow: hidden;
     line-height: 0;
@@ -159,10 +118,12 @@
     border: 0;
 }
 
+/* Etiqueta junto al mapa */
 .cnt-mapa-label {
     display: flex;
     align-items: center;
     gap: clamp(0.75rem, 1.5vw, 1.5rem);
+    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .cnt-mapa-flecha {
@@ -175,6 +136,12 @@
 .cnt-mapa-texto {
     font-size: clamp(1rem, 1.4vw, 1.2rem);
     color: var(--c-negro);
-    white-space: nowrap;
     font-weight: 500;
+    margin: 0;
+}
+
+.cnt-mapa-dir {
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    line-height: 1.65;
+    color: var(--c-negro);
 }
