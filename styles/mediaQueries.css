@@ -2,10 +2,11 @@
 MEDIA QUERIES UNIFICADAS
 ===================================================== */
 
+
 /* BREAKPOINT 1: TABLET/MÓVIL (≤991px) */
 @media (max-width: 991px) {
 
-    /* Hero móvil: intercambia SVGs */
+    /* ── Hero ── */
     .hero-svg--desktop { display: none; }
     .hero-svg--mobile  { display: block; }
 
@@ -14,27 +15,33 @@ MEDIA QUERIES UNIFICADAS
         padding: 1rem;
     }
 
-    /* main sin padding: las secciones gestionan su propio espacio */
+    /* ── Layout general ── */
     main {
         padding: 0;
         padding-top: clamp(4.5rem, 11vw, 6rem); /* espacio para el header absoluto */
     }
 
-    /* Secciones: padding reducido al mínimo */
     .seccion-intro {
         padding: 1.75rem 1rem;
     }
 
-    /* Columnas: padding mínimo */
+    /* ── Columnas de sección ── */
     .col-texto {
         padding: 0.75rem 0.5rem;
         text-align: left;
         align-items: flex-start;
     }
 
+    /* FIX: iguala padding al de .col-texto para que el título
+       "SERVICIOS" quede alineado con el resto de secciones */
     .col-titulo-grande {
         justify-content: flex-start !important;
-        padding-right: 0 !important;
+        padding: 0.75rem 0.5rem !important;
+    }
+
+    .col-titulo-grande .titulo-seccion {
+        width: 100%;
+        margin-bottom: 0;
     }
 
     .titulo-seccion {
@@ -45,17 +52,18 @@ MEDIA QUERIES UNIFICADAS
         align-self: flex-start;
     }
 
-    /* Navbar: colapsa vertical + fondo negro */
+    /* ── Navbar ── */
     .navbar-collapse {
         position: absolute;
         top: 100%; left: 0; right: 0;
         background: #000;
         padding: 1rem;
     }
-    .nav-link     { display: block; padding: 0.5rem 1rem; }
-    .link-colab   { font-size: 0.9rem; }
-    .icono-links  { width: 16px; height: 16px; }
+    .nav-link    { display: block; padding: 0.5rem 1rem; }
+    .link-colab  { font-size: 0.9rem; }
+    .icono-links { width: 16px; height: 16px; }
 
+    /* ── Imágenes ── */
     .imagen-seccion { display: none; }
 
     .hero-stage,
@@ -64,7 +72,7 @@ MEDIA QUERIES UNIFICADAS
         overflow: hidden;
     }
 
-    /* Próximamente */
+    /* ── Sección Próximamente ── */
     .section-proximamente .proximamente-media {
         order: -1;
         padding: 0 0.75rem;
@@ -73,8 +81,8 @@ MEDIA QUERIES UNIFICADAS
 
     .proximamente-content {
         padding-left: 0;
-        align-items: flex-start !important;
-        text-align: left;
+        align-items: center !important;
+        text-align: center;
         margin-top: 1.5rem;
     }
 
@@ -83,21 +91,49 @@ MEDIA QUERIES UNIFICADAS
     .proximamente-arrow-left  { left:  clamp(-3rem, -4vw, -5rem); }
     .proximamente-arrow-right { right: clamp(-3.3rem, -4.3vw, -5.3rem); }
 
-    /* Orden salas: título → texto → imagen */
+    /* ── Sección Salas ── */
     .col-imagen-sala { order: 3; }
 
-    /* Footer */
+    /* ── Footer ── */
     .footer-contact   { align-items: flex-start; }
     .footer-contact p { text-align: right; }
     .footer-copyright { margin-left: 0; width: 100%; }
 
+    /* ── Contacto ── */
     .cnt-titulo { white-space: normal; }
+}
+
+
+/* BREAKPOINT 1b: TABLET/MÓVIL — Contacto (≤991px) */
+@media (max-width: 991px) {
+
+    /* ── Formulario ── */
+    .cnt-form    { width: 100%; }
+    .cnt-field   { width: 100%; }
+    .cnt-control { width: 100% !important; }
+
+    .cnt-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ── Columnas contacto ── */
+    .cnt-col-der {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .col-texto {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 
 /* BREAKPOINT 2: Tablet (≤768px) */
 @media (max-width: 768px) {
 
+    /* ── Layout general ── */
     main {
         padding: 0;
         padding-top: clamp(4rem, 10vw, 5.5rem);
@@ -105,6 +141,7 @@ MEDIA QUERIES UNIFICADAS
 
     .seccion-intro { padding: 1.5rem 0.75rem; }
 
+    /* ── Sección Contacto / Mapa ── */
     .cnt-mapa-row {
         flex-direction: column;
         align-items: flex-start;
@@ -116,13 +153,22 @@ MEDIA QUERIES UNIFICADAS
         max-width: 100%;
     }
 
+    /* ── Sección Salas ── */
+    .sala-img-box { height: clamp(14rem, 52vw, 22rem); }
+
+    /* ── Sección Próximamente ── */
     .proximamente-content { margin-top: 1.5rem; }
+
+    /* ── Galería ── */
+    .gal-lb-prev { left:  0.25rem; }
+    .gal-lb-next { right: 0.25rem; }
 }
 
 
-/* BREAKPOINT 3: MÓVIL PEQUEÑO (≤576px) */
+/* BREAKPOINT 3: Móvil pequeño (≤576px) */
 @media (max-width: 576px) {
 
+    /* ── Layout general ── */
     main {
         padding: 0;
         padding-top: clamp(3.5rem, 9vw, 5rem);
@@ -132,6 +178,7 @@ MEDIA QUERIES UNIFICADAS
 
     .col-texto { padding: 0.5rem 0.25rem; }
 
+    /* ── Footer ── */
     .footer-legal {
         flex-direction: column;
         align-items: flex-start;
@@ -144,52 +191,24 @@ MEDIA QUERIES UNIFICADAS
 
     .imagen-seccion { display: none; }
 
-    .cnt-titulo { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+    /* ── Contacto ── */
+    .cnt-titulo   { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+    .cnt-textarea { min-height: 10rem; }
 
+    /* ── Sección Próximamente ── */
     .proximamente-content { margin-top: 1.5rem; }
 }
 
-/* =========================================================
-CONTACTO — RESPONSIVE MÓVIL
-========================================================= */
-@media (max-width: 991px) {
 
-    /* Formulario: ancho completo */
-    .cnt-form {
-        width: 100%;
-    }
-
-    .cnt-field {
-        width: 100%;
-    }
-
-    .cnt-control {
-        width: 100% !important;
-    }
-
-    /* Botón enviar: ancho completo en móvil */
-    .cnt-btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Columna del formulario: sin padding lateral extra */
-    .cnt-col-der {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Columna info izquierda: también sin padding extra */
-    .col-texto {
-        padding-left: 0;
-        padding-right: 0;
-    }
+/* BREAKPOINT 4: Galería — columnas reducidas (≤900px) */
+@media (max-width: 900px) {
+    .gal-grid    { columns: 3; }
+    .gal-lb-prev { left:  -2rem; }
+    .gal-lb-next { right: -2rem; }
 }
 
-@media (max-width: 576px) {
 
-    /* Textarea más corta en móvil pequeño para no dominar toda la pantalla */
-    .cnt-textarea {
-        min-height: 10rem;
-    }
+/* BREAKPOINT 5: Galería — columnas mínimas (≤480px) */
+@media (max-width: 480px) {
+    .gal-grid { columns: 2; }
 }

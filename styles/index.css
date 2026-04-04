@@ -55,13 +55,19 @@ Bootstrap garantiza que ambas columnas ocupen el mismo espacio.
 
 /* Limita el ancho máximo del contenido */
 .seccion-intro .container {
-    max-width: 65rem;
+    max-width: 60rem;
 }
 
 /* Columna título: padding interno */
 .col-titulo-grande {
     padding: clamp(1rem, 3vw, 2rem);
 }
+
+.col-titulo-grande .titulo-seccion {
+    width: 100%;
+    margin-bottom: 0;
+}
+
 
 /* Columna texto: padding interno */
 .col-texto {

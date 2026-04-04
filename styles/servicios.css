@@ -1,0 +1,154 @@
+/* =====================================================
+SERVICIOS — Estilos específicos de la página
+===================================================== */
+#titulo-seccion{
+    text-decoration: none;
+}
+
+/* ── Ilustración de sección ───────────────────────── */
+.srv-ilustracion {
+    width: 100%;
+    max-width: clamp(14rem, 40vw, 22rem);
+    height: auto;
+    display: block;
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+}
+
+#ilustracion_sala{
+    width: 22rem;
+}
+
+
+/* ── Desplegable ──────────────────────────────────── */
+.srv-dropdown {
+    margin-top: clamp(1rem, 2.5vw, 1.75rem);
+    width: 100%;
+    max-width: 22rem;
+    
+}
+
+.srv-dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 1rem;
+    max-height: 2rem;
+    background: transparent;
+    border: 0.15rem solid var(--c-naranja);
+    padding: 0.3rem 7rem;
+    font-weight: 500;
+    color: var(--c-naranja);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color var(--trans-primaria), background-color var(--trans-primaria), border-color var(--trans-primaria);
+    border-radius: 2rem;
+}
+
+.srv-dropdown-btn:hover,
+.srv-dropdown-btn--abierto {
+    color: var(--c-azul);
+    border: 0.15rem solid var(--c-azul);
+}
+
+.srv-dropdown-list {
+    list-style: none;
+    padding: 0.5rem 1rem;
+    margin: 0.75rem 0 0 0;
+    display: none;
+    flex-direction: column;
+    gap: 0.45rem;
+    border: 0.15rem solid var(--c-naranja);
+    border-radius: 2rem;
+}
+
+.srv-dropdown-list--visible {
+    display: flex;
+}
+
+.srv-dropdown-list li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    font-weight: 500;
+    color: var(--c-negro);
+    text-decoration: none;
+    transition: color var(--trans-primaria);
+}
+
+.srv-dropdown-list li a::before {
+    content: '';
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    background-image: url('../multimedia/recursos_svg/asterisconaranja.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.srv-dropdown-list li a:hover {
+    color: var(--c-naranja);
+}
+
+
+/* ── COCCIÓN a la derecha ─────────────────────────── */
+.section-coccion .col-titulo-grande {
+    align-items: flex-end !important;
+}
+
+.section-coccion .titulo-seccion {
+    width: 100%;
+    text-align: right;
+}
+
+.section-coccion .srv-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.section-coccion .srv-dropdown-list {
+    align-items: flex-end;
+}
+
+.section-coccion .srv-dropdown-list li a {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+
+/* ── Móvil ────────────────────────────────────────── */
+@media (max-width: 991px) {
+    .srv-ilustracion {
+        max-width: clamp(10rem, 55vw, 16rem);
+        margin: 1.5rem auto 0;
+    }
+
+    .srv-dropdown {
+        max-width: 100%;
+    }
+
+    .section-coccion .col-titulo-grande {
+        align-items: flex-start !important;
+    }
+
+    .section-coccion .titulo-seccion {
+        text-align: left;
+    }
+
+    .section-coccion .srv-dropdown {
+        align-items: flex-start;
+    }
+
+    .section-coccion .srv-dropdown-list {
+        align-items: flex-start;
+    }
+
+    .section-coccion .srv-dropdown-list li a {
+        flex-direction: row;
+        text-align: left;
+    }
+}

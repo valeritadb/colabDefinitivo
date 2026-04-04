@@ -171,21 +171,3 @@ LIGHTBOX — sin cambios
     z-index: 10000;
 }
 
-/* =========================================================
-RESPONSIVE
-========================================================= */
-@media (max-width: 900px) {
-    .gal-grid   { columns: 3; }
-    .gal-lb-prev { left:  -2rem; }
-    .gal-lb-next { right: -2rem; }
-}
-
-@media (max-width: 768px) {
-    .sala-img-box { height: clamp(14rem, 52vw, 22rem); }
-    .gal-lb-prev  { left:  0.25rem; }
-    .gal-lb-next  { right: 0.25rem; }
-}
-
-@media (max-width: 480px) {
-    .gal-grid { columns: 2; }
-}
