@@ -18,7 +18,7 @@ MEDIA QUERIES UNIFICADAS
     /* ── Layout general ── */
     main {
         padding: 0;
-        padding-top: clamp(4.5rem, 11vw, 6rem); /* espacio para el header absoluto */
+        padding-top: clamp(8rem, 16vw, 10rem);
     }
 
     .seccion-intro {
@@ -107,6 +107,10 @@ MEDIA QUERIES UNIFICADAS
 /* BREAKPOINT 1b: TABLET/MÓVIL — Contacto (≤991px) */
 @media (max-width: 991px) {
 
+    main{
+        padding-top: clamp(8rem, 16vw, 10rem);
+    }
+
     /* ── Formulario ── */
     .cnt-form    { width: 100%; }
     .cnt-field   { width: 100%; }
@@ -136,7 +140,7 @@ MEDIA QUERIES UNIFICADAS
     /* ── Layout general ── */
     main {
         padding: 0;
-        padding-top: clamp(4rem, 10vw, 5.5rem);
+        padding-top: clamp(8rem, 16vw, 10rem);
     }
 
     .seccion-intro { padding: 1.5rem 0.75rem; }
@@ -171,7 +175,7 @@ MEDIA QUERIES UNIFICADAS
     /* ── Layout general ── */
     main {
         padding: 0;
-        padding-top: clamp(3.5rem, 9vw, 5rem);
+        padding-top: clamp(8rem, 16vw, 10rem);
     }
 
     .seccion-intro { padding: 1.25rem 0.75rem; }

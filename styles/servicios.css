@@ -43,6 +43,7 @@ SERVICIOS — Estilos específicos de la página
     text-decoration: none;
     transition: color var(--trans-primaria), background-color var(--trans-primaria), border-color var(--trans-primaria);
     border-radius: 2rem;
+    white-space: nowrap;
 }
 
 .srv-dropdown-btn:hover,
