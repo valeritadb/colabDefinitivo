@@ -60,7 +60,7 @@ SERVICIOS — Estilos específicos de la página
     flex-direction: column;
     gap: 0.45rem;
     border: 0.15rem solid var(--c-naranja);
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 
 .srv-dropdown-list--visible {

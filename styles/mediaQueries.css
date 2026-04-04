@@ -107,10 +107,6 @@ MEDIA QUERIES UNIFICADAS
 /* BREAKPOINT 1b: TABLET/MÓVIL — Contacto (≤991px) */
 @media (max-width: 991px) {
 
-    main{
-        padding-top: clamp(8rem, 16vw, 10rem);
-    }
-
     /* ── Formulario ── */
     .cnt-form    { width: 100%; }
     .cnt-field   { width: 100%; }
@@ -127,10 +123,6 @@ MEDIA QUERIES UNIFICADAS
         padding-right: 0;
     }
 
-    .col-texto {
-        padding-left: 0;
-        padding-right: 0;
-    }
 }
 
 
