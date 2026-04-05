@@ -1,0 +1,245 @@
+/* =====================================================
+FICHA DE PRODUCTO — Estilos específicos
+===================================================== */
+#titulo_seccion{ 
+    text-decoration: none;
+}
+
+/* ── Botón volver (sustituye al logo en el header) ──
+   Mismo espacio visual que el .esp-logo para no
+   romper el layout del header.
+──────────────────────────────────────────────────── */
+.ficha-btn-volver {
+    z-index: 3000;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    font-weight: 600;
+    color: var(--c-negro);
+    text-transform: lowercase;
+    text-decoration: none;
+    transition: color var(--trans-primaria);
+}
+
+
+.ficha-btn-volver img {
+    transition: opacity var(--trans-fast);
+}
+
+
+/* ── Layout de columnas ─────────────────────────────
+   Dos columnas con borde naranja en el lado exterior:
+   izquierda → borde-left / derecha → borde-right.
+──────────────────────────────────────────────────── */
+.ficha-col {
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.ficha-col--izq {
+    border-left: 0.15rem solid var(--c-naranja);
+}
+
+.ficha-col--der {
+    border-right: 0.15rem solid var(--c-naranja);
+}
+
+
+/* ── Asterisco + título del producto ────────────────
+   El asterisco se alinea verticalmente con la
+   primera línea del h1.
+──────────────────────────────────────────────────── */
+.ficha-titulo-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.ficha-asterisco {
+    flex-shrink: 0;
+    margin-top: 0.15rem; /* alineación óptica con la primera línea del h1 */
+    width: clamp(1.4rem, 2.5vw, 2rem);
+    height: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.ficha-titulo {
+    margin: 0; /* el margen lo gestiona ficha-titulo-wrap */
+}
+
+
+/* ── Descripción y precio ───────────────────────────*/
+.ficha-descripcion {
+    font-size: clamp(1rem, 1.15vw, 1.1rem);
+    line-height: 1.65;
+    color: var(--c-negro);
+    margin: 0 0 clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.ficha-precio {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 700;
+    color: var(--c-negro);
+    margin: 0;
+}
+
+.ficha-precio-unidad {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    font-weight: 400;
+    color: var(--c-negro);
+}
+
+
+/* ── Slider de fotos ────────────────────────────────
+   Sin la decoración de marcos del slider de
+   próximamente. Solo track + controles + dots.
+──────────────────────────────────────────────────── */
+.ficha-slider {
+    width: 100%;
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.ficha-slider-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--c-blanco);
+}
+
+.ficha-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(1.5rem);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.ficha-slide--active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ficha-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Controles: flechas + dots en una fila */
+.ficha-slider-controles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+}
+
+.ficha-slider-btn {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: opacity var(--trans-fast);
+}
+
+.ficha-slider-btn:hover {
+    opacity: 0.6;
+}
+
+.ficha-slider-dots {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.ficha-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--c-negro);
+    opacity: 0.25;
+    transition: opacity var(--trans-fast);
+}
+
+.ficha-dot--active {
+    opacity: 1;
+    background: var(--c-naranja);
+}
+
+
+/* ── Botón reserva ──────────────────────────────────
+   Mismo estilo que el botón de servicios: borde
+   naranja redondeado, texto centrado.
+──────────────────────────────────────────────────── */
+.ficha-btn-reserva {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 3rem;
+    border: 0.15rem solid var(--c-naranja);
+    border-radius: 2rem;
+    background: transparent;
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    font-weight: 600;
+    color: var(--c-naranja);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color var(--trans-primaria), border-color var(--trans-primaria);
+    margin-top: auto;
+}
+
+.ficha-btn-reserva:hover {
+    color: var(--c-azul);
+    border-color: var(--c-azul);
+}
+
+
+/* ── Ilustración esquina inferior derecha ───────────
+   Posicionada en absoluto dentro del .row que tiene
+   position: relative.
+──────────────────────────────────────────────────── */
+.ficha-ilustracion-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: clamp(5rem, 12vw, 9rem);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ficha-ilustracion {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ── Responsive móvil ───────────────────────────────*/
+@media (max-width: 991px) {
+
+    /* En móvil los bordes laterales pasan a ser
+       borde superior e inferior para cada columna */
+    .ficha-col--izq {
+        border-left: none;
+        border-top: 0.15rem solid var(--c-naranja);
+    }
+
+    .ficha-col--der {
+        border-right: none;
+        border-bottom: 0.15rem solid var(--c-naranja);
+    }
+
+    /* La ilustración se oculta en móvil para no
+       solapar el contenido en pantalla pequeña */
+    .ficha-ilustracion-wrap {
+        display: none;
+    }
+}

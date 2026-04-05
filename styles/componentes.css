@@ -25,7 +25,7 @@
 /* Títulos: naranja uppercase subrayado, escala responsive */
 .titulo-seccion {
   color: var(--c-naranja);
-  font-size: clamp(1.5rem, 6vw, 3.5rem);
+  font-size: clamp(1rem, 5.5vw, 3rem);
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: underline;
