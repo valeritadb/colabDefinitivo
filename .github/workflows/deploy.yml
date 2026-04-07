@@ -17,5 +17,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./
-        server-dir: /www/  # Cambia si tu web está en otra carpeta
+        server-dir: /www  # Cambia si tu web está en otra carpeta
         dangerous-clean-slate: true  # Limpia archivos antiguos en el servidor
