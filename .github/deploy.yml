@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Subir web por FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -22,7 +24,9 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          server-dir: /www/
+          state-name: /www/.ftp-deploy-sync-state.json
+          log-level: verbose
           exclude: |
             **/.git*
             **/.git*/**
