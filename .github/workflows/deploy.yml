@@ -25,10 +25,11 @@ jobs:
           port: 21
           local-dir: ./
           server-dir: /www/
-          state-name: /www/.ftp-deploy-sync-state.json
+          state-name: ftp-deploy-sync-state.json
           log-level: verbose
           exclude: |
             **/.git*
             **/.git*/**
             .github/
             README.md
+            ftp-deploy-sync-state.json
