@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Valeria De Barros">
+    <meta name="description" content="COLAB - Ficha de producto - Coworking cerámico by PRODESCO S.L.">
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/producto.css">
+    <link rel="stylesheet" href="../../styles/componentes.css">
+    <link rel="stylesheet" href="../../styles/header.css">
+    <link rel="stylesheet" href="../../styles/footer.css">
+    <link rel="stylesheet" href="../../styles/mediaQueries.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <title>Sala Vasija - Colab Coworking by Prodesco S.L</title>
+
+</head>
+<body>
+
+    <!-- ================================================
+         HEADER — logo sustituido por botón volver
+    ================================================= -->
+    <header>
+        <!-- Botón volver (history.back) en lugar del logo -->
+        <button class="ficha-btn-volver" onclick="history.back()" aria-label="Volver a la página anterior">
+            <img src="../../multimedia/recursos_svg/flecha_larga_izq.svg" alt="" width="20" height="20">
+            <span>volver</span>
+        </button>
+
+        <nav class="main-nav navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-nav flex-column align-items-end ms-auto">
+                    <a href="../../pages/espacio.html" class="nav-link link-colab">
+                        espacio
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img class="icono-links-hover position-absolute top-0 start-0" src="../../multimedia/recursos_svg/azul_def_asterisco.svg" alt="" width="20" height="20">
+                            <img class="icono-links-normal" src="../../multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20">
+                        </span>
+                    </a>
+                    <a href="../../pages/servicios.html" class="nav-link link-colab">
+                        servicios
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img src="../../multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="../../multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                        </span>
+                    </a>
+                    <a href="../../pages/contacto.html" class="nav-link link-colab">
+                        contacto
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img src="../../multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="../../multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================================================
+         CONTENIDO PRINCIPAL
+    ================================================= -->
+    <main>
+
+        <section class="seccion-intro ficha-seccion">
+            <div class="container">
+                <div class="row align-items-stretch g-0 position-relative">
+
+                    <!-- ── COL IZQUIERDA: asterisco + título + descripción + precio ── -->
+                    <div class="col-12 col-md-6 ficha-col ficha-col--izq d-flex flex-column justify-content-start">
+
+                        <!-- Asterisco + título -->
+                        <div class="ficha-titulo-wrap">
+                            <img
+                                src="../../multimedia/recursos_svg/asterisconaranja.svg"
+                                alt=""
+                                class="ficha-asterisco"
+                                aria-hidden="true"
+                                width="32" height="32"
+                            >
+                            <h1 class="titulo-seccion ficha-titulo" id="titulo_seccion">SALA VASIJA</h1>
+                        </div>
+
+                        <!-- Descripción -->
+                        <p class="ficha-descripcion">Esta sala tiene aforo para 8 personas donde podrás dar clases cómodamente.</p>
+
+                        <!-- Precio -->
+                        <p class="ficha-precio">Desde 29,04 € <span class="ficha-precio-unidad">/ hora </span></p>
+
+                    </div>
+
+
+                    <!-- ── COL DERECHA: slider + botón reserva ── -->
+                    <div class="col-12 col-md-6 ficha-col ficha-col--der d-flex flex-column justify-content-start">
+
+                        <!-- Slider de 3 fotos -->
+                        <div class="ficha-slider" role="region" aria-label="Fotos del producto">
+
+                            <!-- Track de slides -->
+                            <div class="ficha-slider-track">
+                                <div class="ficha-slide ficha-slide--active">
+                                    <img src="../../multimedia/galeria_espacio/DSC02655.JPG" alt="Foto 1 del producto">
+                                </div>                           
+                            </div>
+
+                            <!-- Controles -->
+                            <div class="ficha-slider-controles">
+                                <button class="ficha-slider-btn" id="fichaPrev" aria-label="Foto anterior">
+                                    <img src="../../multimedia/recursos_svg/flecha_larga_izq.svg" alt="" width="20" height="20">
+                                </button>
+
+                                <!-- Indicadores -->
+                                <div class="ficha-slider-dots" aria-hidden="true">
+                                    <span class="ficha-dot ficha-dot--active"></span>
+                                    <span class="ficha-dot"></span>
+                                    <span class="ficha-dot"></span>
+                                </div>
+
+                                <button class="ficha-slider-btn" id="fichaNext" aria-label="Foto siguiente">
+                                    <img src="../../multimedia/recursos_svg/flecha_larga.svg" alt="" width="20" height="20">
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- Botón reserva → enlace a Cobot -->
+                        <a
+                            href="https://reservas.colabcoworking.com/book/sala-vasija"
+                            class="ficha-btn-reserva"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            RESERVA
+                        </a>
+
+                    </div>
+
+                </div>
+                <!-- ── Ilustración esquina inferior derecha ── 
+                    <div class="ficha-ilustracion-wrap" aria-hidden="true">
+                        <img
+                            src="../../multimedia/ilustraciones_svg/ILUS SERVICIOS_COWORKING.svg"
+                            alt=""
+                            class="ficha-ilustracion">
+                    </div>-->
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================================================
+         FOOTER GENERAL
+    ================================================= -->
+    <footer id="contacto" class="section footer-top">
+        <div class="footer-top-inner">
+            <nav class="footer-nav" aria-label="Navegación footer">
+                <a href="../../pages/espacio.html">espacio</a>
+                <a href="../../pages/servicios.html">servicios</a>
+                <a href="../../pages/contacto.html">contacto</a>
+            </nav>
+            <div class="footer-contact align-items-end">
+                <p>encuéntranos en<br><a href="https://maps.app.goo.gl/PqAtMPgG8r34Rif7A">Carrer de Franco Tormo, 21ac, Patraix, 46007 València, Valencia</a></p>
+                <a href="https://instagram.com/colab.coworkinglab"
+                   class="footer-instagram"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram de COLAB">
+                   <i class="bi bi-instagram"></i>
+                    colab.coworkinglab
+                </a>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <a href="#">aviso legal</a>
+            <a href="#">términos y condiciones</a>
+            <a href="#">política de cookies</a>
+            <p class="footer-copyright">© <span class="year"></span> COLAB by Prodesco. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="../../scripts/general.js" defer></script>
+    <script defer src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../scripts/ficha.js" defer></script>
+
+</body>
+</html>
