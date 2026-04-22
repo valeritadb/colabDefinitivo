@@ -73,6 +73,7 @@ Bootstrap garantiza que ambas columnas ocupen el mismo espacio.
 
 /* Columna texto: padding interno */
 .col-texto {
+    cursor: default;
     padding: clamp(1rem, 3vw, 2rem);
 }
 
