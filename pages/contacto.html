@@ -103,41 +103,37 @@
 
                     <!-- Columna derecha: formulario -->
                     <div class="col-12 col-md-6 col-texto cnt-col-der d-flex flex-column justify-content-center">
-                        <form class="cnt-form" id="contactForm" novalidate>
+                    <!-- CAMBIO NUEVO 1: Alerta dinámica para feedback de PHP (éxito/error) -->
+                        <div id="formAlert" class="alert mb-3 d-none" role="alert" style="position: relative; z-index: 10;"></div>
+                        
+                        <!-- CAMBIO NUEVO 2: Form ahora envía a PHP con method=post -->
+                        <form class="cnt-form needs-validation" id="contactForm" action="contacto.php" method="post" novalidate>
+                            <!-- CAMBIO NUEVO 3: Honeypot antispam (invisible para humanos, bots lo llenan) -->
+                            <div style="position: absolute; left: -9999px;">
+                                <input type="text" name="honeypot" value="" tabindex="-1" autocomplete="off">
+                            </div>
+
                             <div class="cnt-field mb-3">
                                 <label for="cnt-nombre" class="form-label">Nombre</label>
-                                <input
-                                    type="text"
-                                    class="form-control cnt-control"
-                                    id="cnt-nombre"
-                                    name="nombre"
-                                    placeholder="Tu nombre"
-                                    readonly
-                                >
+                                <!-- CAMBIO NUEVO 4: Quita readonly, añade required + feedback invalid -->
+                                <input type="text" class="form-control cnt-control" id="cnt-nombre" name="nombre" placeholder="Tu nombre" required maxlength="100">
+                                <div class="invalid-feedback">Por favor, introduce tu nombre.</div>
                             </div>
                             <div class="cnt-field mb-3">
                                 <label for="cnt-email" class="form-label">Correo electrónico</label>
-                                <input
-                                    type="email"
-                                    class="form-control cnt-control"
-                                    id="cnt-email"
-                                    name="email"
-                                    placeholder="tu@correo.com"
-                                    readonly
-                                >
+                                <!-- CAMBIO NUEVO 5: Quita readonly, required + feedback -->
+                                <input type="email" class="form-control cnt-control" id="cnt-email" name="email" placeholder="tu@correo.com" required>
+                                <div class="invalid-feedback">Introduce un email válido.</div>
                             </div>
                             <div class="cnt-field mb-4">
                                 <label for="cnt-mensaje" class="form-label">Mensaje</label>
-                                <textarea
-                                    class="form-control cnt-control cnt-textarea"
-                                    id="cnt-mensaje"
-                                    name="mensaje"
-                                    placeholder="Escribe tu mensaje aquí..."
-                                    readonly
-                                ></textarea>
+                                <!-- CAMBIO NUEVO 6: Quita readonly, required + feedback -->
+                                <textarea class="form-control cnt-control cnt-textarea" id="cnt-mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required maxlength="2000"></textarea>
+                                <div class="invalid-feedback">Escribe tu mensaje (mín. 10 caracteres).</div>
                             </div>
                             <button type="submit" class="btn cnt-btn">Enviar</button>
                         </form>
+
                     </div>
 
                 </div>
@@ -209,7 +205,36 @@
         </div>
     </footer>
 
+
     <script src="../scripts/general.js" defer></script>
+    
+    <script>
+        // Validación Bootstrap client-side (evita submits inválidos)
+        (function() {
+            'use strict';
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        })();
+
+        // Detecta parámetros URL de contacto.php (?success=1 o ?error=spam)
+        const urlParams = new URLSearchParams(window.location.search);
+        const alertDiv = document.getElementById('formAlert');
+        if (urlParams.get('success')) {
+            alertDiv.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>¡Mensaje enviado correctamente! Te respondemos pronto.';
+            alertDiv.className = 'alert alert-success mb-3';
+            alertDiv.classList.remove('d-none');
+        } else if (urlParams.get('error')) {
+            alertDiv.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i>Error: Verifica los datos o intenta más tarde.';
+            alertDiv.className = 'alert alert-danger mb-3';
+            alertDiv.classList.remove('d-none');
+        }
+    </script>
 
 </body>
 </html>
