@@ -66,7 +66,7 @@ $fecha = date('Y-m-d H:i:s');
 $contador_ip = $contadores[$ip_actual]['count'] ?? 0;
 
 $log_entry = "[$fecha] IP:$ip | UA:$user_agent | Count:$contador_ip | Nombre:$nombre | Email:$email\n";
-file_put_contents('/colab/logs-contacto.txt', $log_entry, FILE_APPEND | LOCK_EX);
+file_put_contents('colab/logs-contacto.txt', $log_entry, FILE_APPEND | LOCK_EX);
 
 // 7. VALIDA (sin cambios)
 if (empty($nombre) || empty($email) || empty($mensaje) || strlen($nombre) > 100 || 
