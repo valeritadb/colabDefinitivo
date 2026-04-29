@@ -32,7 +32,7 @@ if (!empty($_POST['honeypot']) || strlen($_POST['mensaje'] ?? '') > 2000) {
 
 // 4. MÉTODO DINÁMICO: Auto-contador IPs (bloquea >5 envíos)
 $ip_actual = $_SERVER['REMOTE_ADDR'];
-$contador_file = 'ip-contadores.json';  // Archivo contador (JSON legible)
+$contador_file = 'colab/ip-contadores.json';  // Archivo contador (JSON legible)
 
 $contadores = [];
 if (file_exists($contador_file)) {
