@@ -30,10 +30,17 @@ if (!empty($_POST['honeypot']) || strlen($_POST['mensaje'] ?? '') > 2000) {
     exit;
 }
 
-// 4. MÉTODO DINÁMICO: Auto-contador IPs (bloquea >5 envíos)
+// 4. MÉTODO DINÁMICO: Auto-contador IPs
 $ip_actual = $_SERVER['REMOTE_ADDR'];
-$contador_file = 'colab/ip-contadores.json';  // Archivo contador (JSON legible)
+$colab_dir = 'colab/';  // Carpeta destino
+$contador_file = $colab_dir . 'ip-contadores.json';
 
+// AUTO-CREA CARPETA COLAB si no existe
+/*if (!is_dir($colab_dir)) {
+    mkdir($colab_dir, 0755, true);  // Crea recursivo (pages/colab/)
+}*/
+
+// Lee contadores
 $contadores = [];
 if (file_exists($contador_file)) {
     $contadores = json_decode(file_get_contents($contador_file), true) ?: [];
@@ -45,14 +52,15 @@ if (!isset($contadores[$ip_actual])) {
 $contadores[$ip_actual]['count']++;
 $contadores[$ip_actual]['last_seen'] = time();
 
-// BLOQUEA si >5 submits (ajusta según necesites)
+// Bloquea >5 (ajusta)
 if ($contadores[$ip_actual]['count'] > 5) {
     header('Location: contacto.html?error=spam');
     exit;
 }
 
-// GUARDA contadores
-file_put_contents($contador_file, json_encode($contadores, JSON_PRETTY_PRINT));
+// GUARDA con ruta completa
+file_put_contents($contador_file, json_encode($contadores, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
 
 // 5. LIMPIA DATOS (sin cambios)
 $nombre = htmlspecialchars(trim($_POST['nombre'] ?? ''), ENT_QUOTES, 'UTF-8');
