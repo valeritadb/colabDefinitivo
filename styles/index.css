@@ -187,7 +187,7 @@ SLIDER PRÓXIMAMENTE
     cursor: default;
 }
 
-.proximamente-content h2 {
+.proximamente-content h3 {
     text-transform: lowercase;
     color: var(--c-naranja);
     font-size: clamp(1.75rem, 3.5vw, 3rem);
