@@ -7,7 +7,7 @@
     <meta name="Author" content="Valeria De Barros">
     <meta name="description" content="COLAB - Coworking cerámico by PRODESCO S.L. - Coworking cerámico en Valencia, España. Espacio libre para ceramistas en Valencia. Alquiler de salas y tornos de cerámica. Alquiler de tornos de cerámica en Valencia">
     <meta name="robots" content="index, follow">
-    <link rel="cannonical" href="https://colabcoworking.com">
+    <link rel="canonical" href="https://colabcoworking.com">
     
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/main.css">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/mediaQueries.css">
+    <link rel="stylesheet" href="./styles/cookies.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -178,6 +179,7 @@
                             <div class="proximamente-track" role="region" aria-label="Galería imágenes">
 
                                 <!--Si eres maría solo tocar a partir de esta parte-->
+
                                 <div class="slide slide--active">
                                     <img src="./multimedia/eventos/ceramic_session.jpg" alt="Evento Ceramic session, Valencia - COLAB">
                                 </div>
@@ -244,12 +246,99 @@
             <a href="#">aviso legal</a>
             <a href="#">términos y condiciones</a>
             <a href="#">política de cookies</a>
+            <a href="#" onclick="openCookieSettings(); return false;">gestionar cookies</a>
             <p class="footer-copyright">© <span class="year"></span> COLAB by Prodesco. Todos los derechos reservados.</p>
         </div>
+        
     </footer>
+    <!-- ==================== SISTEMA DE COOKIES ==================== -->
+
+    <!-- BANNER inferior -->
+    <div
+        id="cookie-banner"
+        role="region"
+        aria-label="Aviso de cookies"
+        aria-live="polite"
+        hidden
+    >
+        <div class="container-fluid">
+            <div class="row align-items-center g-2">
+                <div class="col-12 col-md">
+                    <p>
+                        Usamos cookies propias y de terceros para mejorar tu experiencia y,
+                        con tu consentimiento, analizar el uso de la web.
+                        <a href="./pages/politicaCookies.html" target="_blank" rel="noopener">Más información</a>
+                    </p>
+                </div>
+                <div class="col-12 col-md-auto">
+                    <div class="cookie-banner-actions">
+                        <button class="btn-cookie-config" onclick="showModal()" type="button">Configurar</button>
+                        <button class="btn-cookie-reject" onclick="rejectAll()" type="button">Rechazar</button>
+                        <button class="btn-cookie-accept" onclick="acceptAll()" type="button">Aceptar todas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay (fondo oscuro del modal) -->
+    <div id="cookie-overlay" role="presentation" aria-hidden="true" hidden></div>
+
+    <!-- Modal de configuración -->
+    <div
+        id="cookie-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cookie-modal-title"
+        aria-hidden="true"
+        hidden
+    >
+        <div class="cookie-modal-header">
+            <h5 id="cookie-modal-title">Configuración de cookies</h5>
+            <button class="cookie-modal-close" onclick="hideModal()" aria-label="Cerrar configuración de cookies" type="button">&times;</button>
+        </div>
+        <div class="cookie-modal-body">
+            <p>Selecciona qué tipos de cookies quieres permitir. Puedes cambiar esta configuración en cualquier momento desde el pie de página.</p>
+
+            <!-- Técnicas: siempre activas -->
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <strong>Cookies técnicas</strong>
+                    <span>Necesarias para el funcionamiento básico de la web. No pueden desactivarse.</span>
+                </div>
+                <label class="cookie-toggle" aria-label="Cookies técnicas, siempre activas">
+                    <input type="checkbox" checked disabled>
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+
+            <!-- Analíticas: requieren consentimiento -->
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <strong>Cookies analíticas</strong>
+                    <span>Permiten medir visitas y comportamiento de forma anónima para mejorar la web.</span>
+                </div>
+                <label class="cookie-toggle" aria-label="Activar o desactivar cookies analíticas">
+                    <input type="checkbox" id="toggle-analiticas">
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="cookie-modal-footer">
+            <button class="btn-cookie-reject" onclick="rejectAll()" type="button">Rechazar todas</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="saveCustom()" type="button">Guardar selección</button>
+            <button class="btn-cookie-accept" onclick="acceptAll()" type="button">Aceptar todas</button>
+        </div>
+    </div>
+
+    <!-- ==================== FIN SISTEMA DE COOKIES ==================== -->
+
+
+    <script src="./scripts/general.js" defer></script>
 
     <script src="./scripts/general.js" defer></script>
     <script src="./scripts/slider.js" defer></script>
+    <script src="./scripts/cookies.js" defer></script>
 
 </body>
 </html>
