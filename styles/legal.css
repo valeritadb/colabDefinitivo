@@ -65,7 +65,7 @@
     min-width: 900px;
     border-collapse: collapse;
 }
-h2{
+h1, h2{
     color: var(--c-naranja);
 }
 th{
