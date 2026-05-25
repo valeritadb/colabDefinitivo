@@ -1,7 +1,10 @@
 /* *********************************************************
 CONTACTO.CSS
 ********************************************************* */
-
+.cnt-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 /* Título — usa .titulo-seccion de componentes.css,
    solo sobreescribimos el white-space para que no se rompa */
 .cnt-titulo {
