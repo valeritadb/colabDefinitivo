@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Valeria De Barros">
+    <meta name="description" content="Publicar proyecto en COLAB - Coworking cerámico by PRODESCO S.L. Comparte tu proyecto con la comunidad de COLAB en Valencia.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://colabcoworking.com">
+
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/contacto.css">
+    <link rel="stylesheet" href="../styles/componentes.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/mediaQueries.css">
+    <link rel="stylesheet" href="../styles/cookies.css">
+    <link rel="stylesheet" href="../styles/proyectos.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <title>PUBLICAR PROYECTO — Colab Coworking by Prodesco S.L</title>
+    <link rel="icon" href="../favicon512.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="../index.html" class="esp-logo" aria-label="COLAB — volver al inicio">
+            <span class="esp-logo-co">CO</span>
+            <span class="esp-logo-lab">LAB</span>
+        </a>
+
+        <nav class="main-nav navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-nav flex-column align-items-end ms-auto">
+                    <a href="../pages/espacio.html" class="nav-link link-colab">
+                        espacio
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img class="icono-links-hover position-absolute top-0 start-0" src="../multimedia/recursos_svg/azul_def_asterisco.svg" alt="" width="20" height="20">
+                            <img class="icono-links-normal" src="../multimedia/recursos_svg/asterisconaranja.svg" alt="" width="20" height="20">
+                        </span>
+                    </a>
+
+                    <a href="../pages/servicios.html" class="nav-link link-colab">
+                        servicios
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img src="../multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="../multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                        </span>
+                    </a>
+
+                    <a href="https://reservas.colabcoworking.com/events" class="nav-link link-colab" target="_blank" rel="noopener noreferrer">
+                        eventos
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img src="../multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="../multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                        </span>
+                    </a>
+
+                    <a href="../pages/contacto.html" class="nav-link link-colab">
+                        contacto
+                        <span class="icono-links position-relative d-inline-block ms-1">
+                            <img src="../multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
+                            <img src="../multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page-proyectos page-subir-proyecto">
+        <section class="proyectos-intro-section proyecto-form-section py-5">
+            <div class="container">
+                <div class="row g-4 align-items-start">
+                    <div class="col-12 col-lg-4">
+                        <div class="proyecto-form-intro">
+                            <h1 class="proyectos-title mb-3">Publica tu proyecto</h1>
+                            <p class="proyectos-lead mb-0">
+                                Completa este formulario para enviarnos tu proyecto. La información será revisada antes de publicarse.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-8">
+                        <div class="proyecto-form-card">
+                            <form id="formSubirProyecto" class="row g-4" novalidate enctype="multipart/form-data">
+                                <div class="col-12">
+                                    <label for="nombreProyecto" class="form-label proyecto-form-label">Nombre del proyecto</label>
+                                    <input type="text" class="form-control proyecto-form-control" id="nombreProyecto" name="nombre_proyecto" required>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="autorResponsable" class="form-label proyecto-form-label">Autor responsable</label>
+                                    <input type="text" class="form-control proyecto-form-control" id="autorResponsable" name="autor_responsable" required>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="emailProyecto" class="form-label proyecto-form-label">Email</label>
+                                    <input type="email" class="form-control proyecto-form-control" id="emailProyecto" name="email" required>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="telefonoProyecto" class="form-label proyecto-form-label">Número de teléfono</label>
+                                    <input type="tel" class="form-control proyecto-form-control" id="telefonoProyecto" name="telefono" required>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="instagramProyecto" class="form-label proyecto-form-label">Enlace de Instagram</label>
+                                    <input type="url" class="form-control proyecto-form-control" id="instagramProyecto" name="instagram" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="googleFormProyecto" class="form-label proyecto-form-label">Enlace a Google Form</label>
+                                    <input type="url" class="form-control proyecto-form-control" id="googleFormProyecto" name="google_form" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="imagenProyecto" class="form-label proyecto-form-label">Imagen principal del proyecto</label>
+
+                                    <label for="imagenProyecto" class="proyecto-upload-card">
+                                        <input
+                                            type="file"
+                                            class="proyecto-upload-input"
+                                            id="imagenProyecto"
+                                            name="imagen_proyecto"
+                                            accept=".jpg,.jpeg,.png,.webp"
+                                            required
+                                        >
+
+                                        <span class="proyecto-upload-copy">
+                                            <span class="proyecto-upload-title">Sube una imagen de portada</span>
+                                            <span class="proyecto-upload-text">
+                                                Formatos permitidos: JPG, PNG o WebP.
+                                            </span>
+                                        </span>
+
+                                        <span class="proyecto-upload-action">seleccionar archivo</span>
+                                    </label>
+
+                                    <div class="proyecto-upload-preview d-none" id="previewImagenProyecto">
+                                        <img id="previewImagenProyectoImg" src="" alt="Vista previa de la imagen seleccionada">
+                                        <p class="proyecto-upload-file mb-0" id="nombreImagenProyecto"></p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="descripcionProyecto" class="form-label proyecto-form-label">Descripción del proyecto</label>
+                                    <textarea class="form-control proyecto-form-control proyecto-form-textarea" id="descripcionProyecto" name="descripcion" rows="7" required></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-check proyecto-form-check">
+                                        <input class="form-check-input" type="checkbox" id="aceptaTerminos" required>
+                                        <label class="form-check-label" for="aceptaTerminos">
+                                            He leído y acepto los términos y condiciones del uso de estos datos.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="proyecto-form-actions d-flex flex-column flex-sm-row gap-3">
+                                        <button type="button" class="btn btn-proyecto-secundario" id="btnDescartar">descartar</button>
+                                        <button type="submit" class="btn btn-publicar-proyecto">subir proyecto</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="proyecto-modal-overlay" id="modalRevisionProyecto" aria-hidden="true">
+            <div class="proyecto-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalRevisionProyectoLabel">
+                <div class="proyecto-modal-content">
+                    <div class="proyecto-modal-header">
+                        <h2 class="proyecto-modal-title" id="modalRevisionProyectoLabel">Proyecto enviado</h2>
+                        <button type="button" class="proyecto-modal-close" id="cerrarModalProyecto" aria-label="Cerrar">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+
+                    <div class="proyecto-modal-body">
+                        Tu proyecto será revisado antes de ser publicado y el proceso puede tardar hasta 48 horas.
+                    </div>
+
+                    <div class="proyecto-modal-footer">
+                        <button type="button" class="btn btn-publicar-proyecto" id="entendidoModalProyecto">entendido</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer-contacto" class="section footer-top">
+        <div class="footer-top-inner">
+            <nav class="footer-nav" aria-label="Navegación footer">
+                <a href="../pages/espacio.html">espacio</a>
+                <a href="../pages/servicios.html">servicios</a>
+                <a href="../pages/contacto.html">contacto</a>
+            </nav>
+
+            <div class="footer-contact align-items-end">
+                <p>
+                    encuéntranos en<br>
+                    <a href="https://maps.app.goo.gl/PqAtMPgG8r34Rif7A" target="_blank" rel="noopener noreferrer">
+                        Carrer de Franco Tormo, 21ac, Patraix, 46007 València, Valencia
+                    </a>
+                </p>
+
+                <a href="https://instagram.com/colab.coworkinglab"
+                   class="footer-instagram"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram de COLAB">
+                    <i class="bi bi-instagram"></i>
+                    colab.coworkinglab
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            <a href="./avisoLegal.html">aviso legal</a>
+            <a href="./terminosCondiciones.html">términos y condiciones</a>
+            <a href="./politicaPrivacidad.html">política de privacidad</a>
+            <a href="./politicaCookies.html">política de cookies</a>
+            <p class="footer-copyright">© <span class="year"></span> COLAB by Prodesco. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SISTEMA DE COOKIES -->
+    <div id="cookie-banner" role="region" aria-label="Aviso de cookies" aria-live="polite" hidden>
+        <div class="container-fluid">
+            <div class="row align-items-center g-2">
+                <div class="col-12 col-md">
+                    <p>
+                        Usamos cookies propias y de terceros para mejorar tu experiencia y,
+                        con tu consentimiento, analizar el uso de la web.
+                        <a href="../pages/politicaCookies.html" target="_blank" rel="noopener noreferrer">Más información</a>
+                    </p>
+                </div>
+                <div class="col-12 col-md-auto">
+                    <div class="cookie-banner-actions">
+                        <button class="btn-cookie-config" onclick="showModal()" type="button">Configurar</button>
+                        <button class="btn-cookie-reject" onclick="rejectAll()" type="button">Rechazar</button>
+                        <button class="btn-cookie-accept" onclick="acceptAll()" type="button">Aceptar todas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-overlay" role="presentation" aria-hidden="true" hidden></div>
+
+    <div id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title" aria-hidden="true" hidden>
+        <div class="cookie-modal-header">
+            <h5 id="cookie-modal-title">Configuración de cookies</h5>
+            <button class="cookie-modal-close" onclick="hideModal()" aria-label="Cerrar configuración de cookies" type="button">&times;</button>
+        </div>
+
+        <div class="cookie-modal-body">
+            <p>Selecciona qué tipos de cookies quieres permitir. Puedes cambiar esta configuración en cualquier momento desde el pie de página.</p>
+
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <strong>Cookies técnicas</strong>
+                    <span>Necesarias para el funcionamiento básico de la web. No pueden desactivarse.</span>
+                </div>
+                <label class="cookie-toggle" aria-label="Cookies técnicas, siempre activas">
+                    <input type="checkbox" checked disabled>
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <strong>Cookies analíticas</strong>
+                    <span>Permiten medir visitas y comportamiento de forma anónima para mejorar la web.</span>
+                </div>
+                <label class="cookie-toggle" aria-label="Activar o desactivar cookies analíticas">
+                    <input type="checkbox" id="toggle-analiticas">
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="cookie-modal-footer">
+            <button class="btn-cookie-reject" onclick="rejectAll()" type="button">Rechazar todas</button>
+            <button class="btn btn-outline-secondary btn-sm" onclick="saveCustom()" type="button">Guardar selección</button>
+            <button class="btn-cookie-accept" onclick="acceptAll()" type="button">Aceptar todas</button>
+        </div>
+    </div>
+
+    <script src="../scripts/general.js" defer></script>
+    <script src="../scripts/cookies.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('formSubirProyecto');
+            const btnDescartar = document.getElementById('btnDescartar');
+
+            const inputImagen = document.getElementById('imagenProyecto');
+            const previewWrap = document.getElementById('previewImagenProyecto');
+            const previewImg = document.getElementById('previewImagenProyectoImg');
+            const previewName = document.getElementById('nombreImagenProyecto');
+
+            const modal = document.getElementById('modalRevisionProyecto');
+            const cerrarModal = document.getElementById('cerrarModalProyecto');
+            const btnEntendido = document.getElementById('entendidoModalProyecto');
+
+            if (inputImagen) {
+                inputImagen.addEventListener('change', function () {
+                    const archivo = this.files && this.files[0];
+
+                    if (!archivo) {
+                        if (previewWrap) previewWrap.classList.add('d-none');
+                        if (previewImg) previewImg.src = '';
+                        if (previewName) previewName.textContent = '';
+                        return;
+                    }
+
+                    const tiposPermitidos = ['image/jpeg', 'image/png', 'image/webp'];
+
+                    if (!tiposPermitidos.includes(archivo.type)) {
+                        this.value = '';
+                        if (previewWrap) previewWrap.classList.add('d-none');
+                        if (previewImg) previewImg.src = '';
+                        if (previewName) previewName.textContent = '';
+                        alert('Por favor, selecciona una imagen JPG, PNG o WebP.');
+                        return;
+                    }
+
+                    const url = URL.createObjectURL(archivo);
+
+                    if (previewImg) previewImg.src = url;
+                    if (previewName) previewName.textContent = archivo.name;
+                    if (previewWrap) previewWrap.classList.remove('d-none');
+                });
+            }
+
+            function abrirModalProyecto() {
+                if (!modal) return;
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-proyecto-open');
+            }
+
+            function cerrarModalProyecto() {
+                if (!modal) return;
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-proyecto-open');
+            }
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    abrirModalProyecto();
+                });
+            }
+
+            if (btnDescartar && form) {
+                btnDescartar.addEventListener('click', function () {
+                    form.reset();
+
+                    if (previewWrap) previewWrap.classList.add('d-none');
+                    if (previewImg) previewImg.src = '';
+                    if (previewName) previewName.textContent = '';
+                });
+            }
+
+            if (cerrarModal) {
+                cerrarModal.addEventListener('click', cerrarModalProyecto);
+            }
+
+            if (btnEntendido) {
+                btnEntendido.addEventListener('click', cerrarModalProyecto);
+            }
+
+            if (modal) {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) {
+                        cerrarModalProyecto();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) {
+                    cerrarModalProyecto();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
