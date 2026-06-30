@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Valeria De Barros">
-    <meta name="description" content="Revisión de proyectos en COLAB - Panel visual para revisar, aprobar o rechazar proyectos enviados a la plataforma.">
+    <meta name="description" content="Revisión individual de proyecto en COLAB - Panel de administración para aprobar o rechazar proyectos enviados.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://colabcoworking.com">
 
@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <title>REVISAR PROYECTOS — Colab Coworking by Prodesco S.L</title>
+    <title>REVISAR UN PROYECTO — Colab Coworking by Prodesco S.L</title>
     <link rel="icon" href="../favicon512.png" type="image/x-icon">
 </head>
 <body>
@@ -56,7 +56,7 @@
                         eventos
                         <span class="icono-links position-relative d-inline-block ms-1">
                             <img src="../multimedia/recursos_svg/asterisconaranja.svg" alt="Marcador naranja" class="icono-links-normal" width="20" height="20">
-                            <img src="../multimedia/recursos_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
+                            <img src="../multimedia/recurs_svg/azul_def_asterisco.svg" alt="Marcador azul" class="icono-links-hover position-absolute top-0 start-0" width="20" height="20">
                         </span>
                     </a>
 
@@ -73,121 +73,104 @@
     </header>
 
     <!-- MAIN -->
-    <main class="page-proyectos page-revisar-proyectos">
-        <section class="proyectos-intro-section py-5">
+    <main class="page-proyectos page-proyecto-detalle page-revision-detalle">
+        <section class="proyecto-detalle-section py-5">
             <div class="container">
-                <div class="row align-items-end g-4">
-                    <div class="col-12 col-lg-8">
-                        <p class="proyectos-kicker">panel de revisión</p>
-                        <p class="proyectos-lead mb-0">
-                            Gestiona los proyectos enviados a COLAB y revisa su estado antes de publicarlos. Desde aquí podrás entrar al detalle individual para aprobarlos o rechazarlos.
+                <article class="proyecto-detalle-layout">
+                    <div class="proyecto-detalle-head">
+                        <p class="proyectos-kicker">revisión de proyecto</p>
+
+                        <div class="proyecto-card-meta proyecto-detalle-meta">
+                            <span class="proyecto-tag">cerámica</span>
+                            <span class="proyecto-separador">/</span>
+                            <span class="proyecto-fecha">junio 2026</span>
+                            <span class="proyecto-separador">/</span>
+                            <span class="proyecto-autor">por Nombre Apellido</span>
+                        </div>
+
+                        <h1 class="proyectos-title proyecto-detalle-title">Nombre del proyecto</h1>
+
+                        <p class="proyecto-detalle-entradilla">
+                            Vista individual del proyecto enviada al panel de revisión, preparada para aprobar, rechazar o modificar su estado dentro del flujo de publicación.
                         </p>
                     </div>
 
-                    <div class="col-12 col-lg-4 d-flex justify-content-lg-end">
-                        <a href="./proyectos.html" class="btn btn-proyecto-secundario">
-                            ver proyectos públicos
+                    <figure class="proyecto-detalle-media">
+                        <img
+                            src="../../multimedia/image.jpg"
+                            alt="Imagen principal del proyecto en revisión"
+                            loading="lazy"
+                        >
+                    </figure>
+
+                    <div class="proyecto-detalle-body">
+                        <div class="proyecto-detalle-content">
+                            <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque fugit est quam repellendus ut beatae aspernatur id, alias natus et sequi quisquam vitae molestiae quia fugiat vel repellat nemo magni?
+                            </p>
+                        </div>
+
+                        <aside class="proyecto-detalle-aside">
+                            <div class="proyecto-detalle-info-card proyecto-admin-panel">
+                                <h2 class="proyecto-detalle-info-title">Panel de revisión</h2>
+
+                                <div class="proyecto-admin-estado">
+                                    <span class="proyecto-admin-estado-label">Estado actual</span>
+                                    <span class="proyecto-estado-badge estado-pendiente" id="estadoProyectoActual">pendiente</span>
+                                </div>
+
+                                <dl class="proyecto-detalle-info-list">
+                                    <div class="proyecto-detalle-info-item">
+                                        <dt>Categoría</dt>
+                                        <dd>Cerámica</dd>
+                                    </div>
+
+                                    <div class="proyecto-detalle-info-item">
+                                        <dt>Fecha</dt>
+                                        <dd>Junio 2026</dd>
+                                    </div>
+
+                                    <div class="proyecto-detalle-info-item">
+                                        <dt>Autor</dt>
+                                        <dd>Nombre Apellido</dd>
+                                    </div>
+
+                                    <div class="proyecto-detalle-info-item">
+                                        <dt>Email</dt>
+                                        <dd>
+                                            <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a>
+                                        </dd>
+                                    </div>
+
+                                    <div class="proyecto-detalle-info-item">
+                                        <dt>Instagram</dt>
+                                        <dd>
+                                            <a href="https://instagram.com/colab.coworkinglab" target="_blank" rel="noopener noreferrer">
+                                                @colab.coworkinglab
+                                            </a>
+                                        </dd>
+                                    </div>
+                                </dl>
+
+                                <div class="proyecto-admin-actions">
+                                    <button type="button" class="btn btn-admin-aprobar" data-estado="publicado">
+                                        aprobar proyecto
+                                    </button>
+
+                                    <button type="button" class="btn btn-admin-rechazar" data-estado="rechazado">
+                                        rechazar proyecto
+                                    </button>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <div class="proyecto-detalle-footer proyecto-detalle-footer-admin">
+                        <a href="./revisarproyectos.html" class="btn btn-proyecto-secundario">
+                            volver a revisar proyectos
                         </a>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="proyectos-listado-section pb-5">
-            <div class="container">
-                <div class="row g-4">
-
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <article class="card proyecto-card proyecto-card-admin h-100 border-0">
-                            <a href="./revisarunproyecto.html?id=1" class="proyecto-card-link">
-                                <div class="proyecto-card-media">
-                                    <img src="../../multimedia/image.jpg" class="card-img-top" alt="Proyecto pendiente de revisión" loading="lazy">
-                                </div>
-
-                                <div class="card-body proyecto-card-body">
-                                    <div class="proyecto-card-topline">
-                                        <div class="proyecto-card-meta mb-0">
-                                            <span class="proyecto-tag">cerámica</span>
-                                            <span class="proyecto-separador">/</span>
-                                            <span class="proyecto-fecha">junio 2026</span>
-                                        </div>
-
-                                        <span class="proyecto-estado-badge estado-pendiente">pendiente</span>
-                                    </div>
-
-                                    <h2 class="proyecto-card-title">Nombre del proyecto</h2>
-
-                                    <p class="proyecto-card-text">
-                                        Proyecto pendiente de validación editorial antes de publicarse en el listado principal de proyectos.
-                                    </p>
-
-                                    <span class="proyecto-card-cta">revisar proyecto</span>
-                                </div>
-                            </a>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <article class="card proyecto-card proyecto-card-admin h-100 border-0">
-                            <a href="./revisarunproyecto.html?id=2" class="proyecto-card-link">
-                                <div class="proyecto-card-media">
-                                    <img src="../../multimedia/image-2.jpg" class="card-img-top" alt="Proyecto publicado" loading="lazy">
-                                </div>
-
-                                <div class="card-body proyecto-card-body">
-                                    <div class="proyecto-card-topline">
-                                        <div class="proyecto-card-meta mb-0">
-                                            <span class="proyecto-tag">comunidad</span>
-                                            <span class="proyecto-separador">/</span>
-                                            <span class="proyecto-fecha">mayo 2026</span>
-                                        </div>
-
-                                        <span class="proyecto-estado-badge estado-publicado">publicado</span>
-                                    </div>
-
-                                    <h2 class="proyecto-card-title">Proyecto colaborativo</h2>
-
-                                    <p class="proyecto-card-text">
-                                        Publicación ya aprobada y visible dentro del entorno público de proyectos de COLAB.
-                                    </p>
-
-                                    <span class="proyecto-card-cta">revisar proyecto</span>
-                                </div>
-                            </a>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <article class="card proyecto-card proyecto-card-admin h-100 border-0">
-                            <a href="./revisarunproyecto.html?id=3" class="proyecto-card-link">
-                                <div class="proyecto-card-media">
-                                    <img src="../../multimedia/image.jpg" class="card-img-top" alt="Proyecto rechazado" loading="lazy">
-                                </div>
-
-                                <div class="card-body proyecto-card-body">
-                                    <div class="proyecto-card-topline">
-                                        <div class="proyecto-card-meta mb-0">
-                                            <span class="proyecto-tag">proceso</span>
-                                            <span class="proyecto-separador">/</span>
-                                            <span class="proyecto-fecha">abril 2026</span>
-                                        </div>
-
-                                        <span class="proyecto-estado-badge estado-rechazado">rechazado</span>
-                                    </div>
-
-                                    <h2 class="proyecto-card-title">Proceso y experimentación</h2>
-
-                                    <p class="proyecto-card-text">
-                                        Proyecto revisado previamente y marcado como rechazado dentro del flujo de moderación.
-                                    </p>
-
-                                    <span class="proyecto-card-cta">revisar proyecto</span>
-                                </div>
-                            </a>
-                        </article>
-                    </div>
-
-                </div>
+                </article>
             </div>
         </section>
     </main>
@@ -293,5 +276,31 @@
 
     <script src="../scripts/general.js" defer></script>
     <script src="../scripts/cookies.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const estadoActual = document.getElementById('estadoProyectoActual');
+            const botonesEstado = document.querySelectorAll('[data-estado]');
+
+            if (!estadoActual || !botonesEstado.length) return;
+
+            botonesEstado.forEach(function (boton) {
+                boton.addEventListener('click', function () {
+                    const nuevoEstado = boton.getAttribute('data-estado');
+
+                    estadoActual.classList.remove('estado-pendiente', 'estado-publicado', 'estado-rechazado');
+
+                    if (nuevoEstado === 'publicado') {
+                        estadoActual.textContent = 'publicado';
+                        estadoActual.classList.add('estado-publicado');
+                    }
+
+                    if (nuevoEstado === 'rechazado') {
+                        estadoActual.textContent = 'rechazado';
+                        estadoActual.classList.add('estado-rechazado');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
