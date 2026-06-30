@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Subir web por FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -24,12 +22,12 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./
-          server-dir: /www/
-          state-name: ftp-deploy-sync-state.json
+          server-dir: ./
+          timeout: 120000
           log-level: verbose
           exclude: |
             **/.git*
             **/.git*/**
-            .github/
+            .github/**
             README.md
             ftp-deploy-sync-state.json
